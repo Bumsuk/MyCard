@@ -10,13 +10,13 @@ import SwiftUI
 struct ToolbarButtonView: View {
     let modal: CardModal
     var body: some View {
-        VStack {
+        VStack(spacing: 5) {
             Image(systemName: modal.buttonData.imageName)
-                .font(.title)
-                .frame(width: 40, height: 40, alignment: .center)
-            Text(modal.buttonData.text)
+                //.font(.title)
+                .frame(width: 20, height: 20, alignment: .center)
+            Text(modal.buttonData.text).font(.caption)
         }
-        .padding(.top)
+        //.padding(.top)
     }
 }
 
@@ -31,7 +31,11 @@ struct CardBottomToolbar: View {
                 }, label: {
                     ToolbarButtonView(modal: type)
                 })
+                Spacer()
             }
+            
+            CirclAnimView().frame(width: 60, height: 60, alignment: .center)
+            
         }
         .onAppear(perform: {
         })
@@ -44,6 +48,6 @@ struct CardBottomToolbar_Previews: PreviewProvider {
             CardBottomToolbar(cardModal: .constant(.stickerPicker))
         }
         .previewLayout(.sizeThatFits)
-        .padding()
+        //.padding()
     }
 }

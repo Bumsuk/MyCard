@@ -25,9 +25,10 @@ struct CardDetailView: View {
                 
                 ToolbarItem(placement: .bottomBar) {
                     CardBottomToolbar(cardModal: $currentModal)
+                        //.padding([.leading, .trailing], 10)
                 }
-
             }
+            .hidden()
     }
 }
 

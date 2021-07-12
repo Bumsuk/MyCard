@@ -26,6 +26,9 @@ struct SingleCardView_Previews: PreviewProvider {
         Group {
             SingleCardView()
                 .environmentObject(ViewState())
+            SingleCardView()
+                .previewDevice("iPod touch (7th generation)")
+                .environmentObject(ViewState())
 
         }
     }

@@ -26,9 +26,6 @@ struct CardsView_Previews: PreviewProvider {
         Group {
             CardsView()
                 .environmentObject(ViewState())
-            CardsView()
-                .previewDevice("iPod touch (7th generation)")
-                .environmentObject(ViewState())
         }
     }
 }
