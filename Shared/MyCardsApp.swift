@@ -13,8 +13,9 @@ struct MyCardsApp: App {
     
     var body: some Scene {
         WindowGroup {
-//            CardsView()
-//                .environmentObject(viewState)
+            // CardsView()
+            //    .environmentObject(viewState)
+            // 테스트용
             ResizableView()
         }
     }

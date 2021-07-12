@@ -11,6 +11,7 @@ struct ResizableView: View {
     @State private var transform = Transform() // 이후 binding으로 변경예정!
     @State private var previousOffset: CGSize = .zero
     @State private var previousRotation: Angle = .zero
+    @State private var scale: CGFloat = 1.0
     
     private let content = RoundedRectangle(cornerRadius: 30.0)
     private let color = Color.red
@@ -36,6 +37,16 @@ struct ResizableView: View {
             .onEnded { _ in
                 previousRotation = .zero
             }
+        let scaleGesture = MagnificationGesture()
+            .onChanged { scale in
+                self.scale = scale
+            }
+            .onEnded { scale in
+                transform.size.width *= scale
+                transform.size.height *= scale
+                self.scale = 1.0
+            }
+        
         
 
         content
@@ -44,10 +55,12 @@ struct ResizableView: View {
                    alignment: .center)
             .foregroundColor(color)
             
-            .offset(transform.offset)
             .rotationEffect(transform.rotation)
+            .scaleEffect(scale)
+            .offset(transform.offset)
             .gesture(dragGesture)
-            .gesture(rotationGesture)
+            .gesture(SimultaneousGesture(rotationGesture, scaleGesture)) // 이게 핵심 포인트!
+            
     }
 }
 
