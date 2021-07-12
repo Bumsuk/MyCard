@@ -7,11 +7,16 @@
 
 import SwiftUI
 
+// 카드 리스트 아이템뷰
 struct CardThumbnailView: View {
     var body: some View {
-        RoundedRectangle(cornerRadius: 15)
-            .foregroundColor(.gray)
-            .frame(width: 150, height: 250, alignment: .center)
+        ZStack {
+            RoundedRectangle(cornerRadius: 15)
+                .foregroundColor(.gray)
+                .frame(width: 150, height: 250, alignment: .center)
+        
+            Text("🤡")
+        }
     }
 }
 
