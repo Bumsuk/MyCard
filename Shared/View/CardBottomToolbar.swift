@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ToolbarButtonView: View {
+    // let modal: CardModal
     var body: some View {
         VStack {
             Image(systemName: "heart.circle").font(.largeTitle)
