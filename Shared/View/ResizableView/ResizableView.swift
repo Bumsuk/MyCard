@@ -26,9 +26,6 @@ struct ResizableView: View {
             .foregroundColor(color)
             .offset(transform.offset)
             .gesture(dragGesture)
-            .onTapGesture(perform: {
-                print("[!!!!!!!!!!!!] onTapGesture()")
-            })
     }
 }
 
