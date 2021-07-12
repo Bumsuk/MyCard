@@ -38,6 +38,7 @@ struct CardBottomToolbar: View {
             
         }
         .onAppear(perform: {
+            
         })
     }
 }
