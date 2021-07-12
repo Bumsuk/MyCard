@@ -23,7 +23,12 @@ struct CardsView: View {
 
 struct CardsView_Previews: PreviewProvider {
     static var previews: some View {
-        CardsView()
-            .environmentObject(ViewState())
+        Group {
+            CardsView()
+                .environmentObject(ViewState())
+            CardsView()
+                .previewDevice("iPod touch (7th generation)")
+                .environmentObject(ViewState())
+        }
     }
 }
