@@ -12,10 +12,21 @@ struct CardDetailView: View {
     @EnvironmentObject var viewState: ViewState
     @State private var currentModal: CardModal?
     @Binding var card: Card
-    
+        
     var body: some View {
         content
             .modifier(CardToolbar(currentModal: $currentModal))
+            .sheet(item: $currentModal) { item in
+                switch item {
+                case .stickerPicker:
+                    EmptyView()
+                default:
+                    EmptyView()
+                }
+            }
+            .onAppear(perform: {
+
+            })
     }
     
     var content: some View {
@@ -33,9 +44,6 @@ struct CardDetailView: View {
                                 Label("Delete", systemImage: "trash")
                             })
                         }
-                        .contextMenu(menuItems: {
-                            
-                        })
                 }
             }
         }
