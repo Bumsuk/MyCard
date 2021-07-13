@@ -44,8 +44,6 @@ struct ResizableView: ViewModifier {
                 self.scale = 1.0
             }
         
-        
-        
         content
             .frame(width: transform.size.width,
                    height: transform.size.height,

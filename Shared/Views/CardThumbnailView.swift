@@ -9,6 +9,8 @@ import SwiftUI
 
 // 카드 리스트 아이템뷰
 struct CardThumbnailView: View {
+    
+    
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 15)
