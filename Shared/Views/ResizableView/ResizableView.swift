@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct ResizableView: ViewModifier {
-    @State private var transform = Transform() // 이후 binding으로 변경예정!
+    @Binding var transform: Transform // 외부 참조!
     @State private var previousOffset: CGSize = .zero
     @State private var previousRotation: Angle = .zero
     @State private var scale: CGFloat = 1.0
+    
     
     func body(content: Content) -> some View {
         let dragGesture = DragGesture()
@@ -21,7 +22,7 @@ struct ResizableView: ViewModifier {
                  transform.offset = CGSize(width: value.translation.width + previousOffset.width,
                  height: value.translation.height + previousOffset.height)
                  */
-                print("[onChange] \(value) > \(transform.offset)")
+                // print("[onChange] \(value) > \(transform.offset)")
             }
             .onEnded { value in
                 previousOffset = transform.offset
@@ -53,6 +54,9 @@ struct ResizableView: ViewModifier {
             .offset(transform.offset)
             .gesture(dragGesture)
             .gesture(SimultaneousGesture(rotationGesture, scaleGesture)) // 이게 핵심 포인트!
+            .onAppear(perform: {
+                previousOffset = transform.offset
+            })
 
     }
 }
@@ -61,6 +65,6 @@ struct ResizableView_Previews: PreviewProvider {
     static var previews: some View {
         RoundedRectangle(cornerRadius: 30.0)
             .foregroundColor(.red)
-            .modifier(ResizableView())
+            .modifier(ResizableView(transform: .constant(initialCards[0].elements[0].transform)))
     }
 }

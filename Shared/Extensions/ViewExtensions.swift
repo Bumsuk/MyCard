@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 extension View {
-    func resizableView() -> some View {
-        modifier(ResizableView())
+    func resizableView(transform binding: Binding<Transform>) -> some View {
+        modifier(ResizableView(transform: binding))
     }
 }

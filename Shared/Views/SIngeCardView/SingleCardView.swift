@@ -10,14 +10,29 @@ import SwiftUI
 // 카드 상세뷰 네비
 struct SingleCardView: View {
     @EnvironmentObject var viewState: ViewState
+    @EnvironmentObject var store: CardStore
 
+    var noData: some View {
+        Text("암것도 없으요!").foregroundColor(.gray)
+    }
+    
     var body: some View {
-        NavigationView {
-            CardDetailView()
-                .navigationBarTitleDisplayMode(.inline)
-                .navigationTitle("Card!")
+        if let selectedCard = viewState.selectedCard {
+            if let index = store.index(for: selectedCard) {
+                NavigationView {
+                    CardDetailView(card: $store.cards[index])
+                        .navigationBarTitleDisplayMode(.inline)
+                        .navigationTitle("Card!")
+                }
+                .navigationViewStyle(StackNavigationViewStyle())
+                .onAppear(perform: {
+                })
+            } else {
+                noData
+            }
+        } else {
+            noData
         }
-        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
@@ -25,7 +40,8 @@ struct SingleCardView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             SingleCardView()
-                .environmentObject(ViewState())
+                .environmentObject(ViewState(card: initialCards[0]))
+                .environmentObject(CardStore(defaultData: true))
         }
     }
 }

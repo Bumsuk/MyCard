@@ -11,13 +11,20 @@ import SwiftUI
 struct CardsListView: View {
     @EnvironmentObject var viewState: ViewState
     @EnvironmentObject var store: CardStore
-    
+
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack {
                 ForEach(store.cards) { card in
-                    CardThumbnailView()
+                    CardThumbnailView(card: card)
+                        .contextMenu(menuItems: {
+                            // swiftlint:disable:next multiple_closures_with_trailing_closure
+                            Button(action: { store.remove(card) }) {
+                                Label("Delete", systemImage: "trash")
+                            }
+                        })
                         .onTapGesture {
+                            viewState.selectedCard = card
                             viewState.showAllCards.toggle()
                         }
                 }
@@ -31,5 +38,6 @@ struct CardsListView_Previews: PreviewProvider {
         CardsListView()
             .environmentObject(ViewState())
             .environmentObject(CardStore(defaultData: true))
+            .previewLayout(.sizeThatFits)
     }
 }

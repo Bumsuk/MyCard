@@ -54,6 +54,8 @@
 		C0B564D7269D3642007237E4 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B564D5269D3642007237E4 /* Card.swift */; };
 		C0B564D9269D3737007237E4 /* CardStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B564D8269D3737007237E4 /* CardStore.swift */; };
 		C0B564DA269D3737007237E4 /* CardStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B564D8269D3737007237E4 /* CardStore.swift */; };
+		C0B56515269D59C5007237E4 /* CardElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B56514269D59C5007237E4 /* CardElementView.swift */; };
+		C0B56516269D59C5007237E4 /* CardElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B56514269D59C5007237E4 /* CardElementView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +89,7 @@
 		C0B564D1269D35FE007237E4 /* CardElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardElement.swift; sourceTree = "<group>"; };
 		C0B564D5269D3642007237E4 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		C0B564D8269D3737007237E4 /* CardStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStore.swift; sourceTree = "<group>"; };
+		C0B56514269D59C5007237E4 /* CardElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardElementView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,7 @@
 			children = (
 				C09325F8269BEC6400D689CC /* SingleCardView.swift */,
 				C049956D269C14D0001CD798 /* CardDetailView.swift */,
+				C0B56514269D59C5007237E4 /* CardElementView.swift */,
 				C00D82BA269C1BE800455483 /* CardBottomToolbar.swift */,
 				C0B5648E269D2D30007237E4 /* CardToolbar.swift */,
 			);
@@ -377,6 +381,7 @@
 				C09325F9269BEC6400D689CC /* SingleCardView.swift in Sources */,
 				C00D82CC269C3D8F00455483 /* Operators.swift in Sources */,
 				C0B5648B269D2B6D007237E4 /* Settings.swift in Sources */,
+				C0B56515269D59C5007237E4 /* CardElementView.swift in Sources */,
 				C00D82BB269C1BE800455483 /* CardBottomToolbar.swift in Sources */,
 				C09325F6269BE96A00D689CC /* CardThumbnailView.swift in Sources */,
 				C0B5648F269D2D30007237E4 /* CardToolbar.swift in Sources */,
@@ -398,6 +403,7 @@
 				C0B564D7269D3642007237E4 /* Card.swift in Sources */,
 				C00D82C6269C30B000455483 /* ResizableView.swift in Sources */,
 				C09325E7269BE47600D689CC /* ContentView.swift in Sources */,
+				C0B56516269D59C5007237E4 /* CardElementView.swift in Sources */,
 				C00D82C9269C31E900455483 /* Transform.swift in Sources */,
 				C09325F4269BE55300D689CC /* CardsListView.swift in Sources */,
 				C0B564D3269D35FE007237E4 /* CardElement.swift in Sources */,
