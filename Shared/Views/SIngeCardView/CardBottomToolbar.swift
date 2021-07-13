@@ -24,7 +24,7 @@ struct CardBottomToolbar: View {
     @Binding var cardModal: CardModal?
     
     var body: some View {
-        HStack(spacing: 20) {
+        HStack(spacing: 10) {
             ForEach(CardModal.allCases, id: \.self) { type in
                 Button(action: {
                     cardModal = type

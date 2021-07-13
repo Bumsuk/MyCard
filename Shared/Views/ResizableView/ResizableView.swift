@@ -7,23 +7,20 @@
 
 import SwiftUI
 
-struct ResizableView: View {
+struct ResizableView: ViewModifier {
     @State private var transform = Transform() // 이후 binding으로 변경예정!
     @State private var previousOffset: CGSize = .zero
     @State private var previousRotation: Angle = .zero
     @State private var scale: CGFloat = 1.0
     
-    private let content = RoundedRectangle(cornerRadius: 30.0)
-    private let color = Color.red
-
-    var body: some View {
+    func body(content: Content) -> some View {
         let dragGesture = DragGesture()
             .onChanged { value in
                 transform.offset = value.translation + previousOffset
                 /*
-                transform.offset = CGSize(width: value.translation.width + previousOffset.width,
-                                          height: value.translation.height + previousOffset.height)
-                */
+                 transform.offset = CGSize(width: value.translation.width + previousOffset.width,
+                 height: value.translation.height + previousOffset.height)
+                 */
                 print("[onChange] \(value) > \(transform.offset)")
             }
             .onEnded { value in
@@ -48,24 +45,24 @@ struct ResizableView: View {
             }
         
         
-
+        
         content
             .frame(width: transform.size.width,
                    height: transform.size.height,
                    alignment: .center)
-            .foregroundColor(color)
-            
             .rotationEffect(transform.rotation)
             .scaleEffect(scale)
             .offset(transform.offset)
             .gesture(dragGesture)
             .gesture(SimultaneousGesture(rotationGesture, scaleGesture)) // 이게 핵심 포인트!
-            
+
     }
 }
 
 struct ResizableView_Previews: PreviewProvider {
     static var previews: some View {
-        ResizableView()
+        RoundedRectangle(cornerRadius: 30.0)
+            .foregroundColor(.red)
+            .modifier(ResizableView())
     }
 }

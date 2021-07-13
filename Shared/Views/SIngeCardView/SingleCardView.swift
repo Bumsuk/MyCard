@@ -15,7 +15,7 @@ struct SingleCardView: View {
         NavigationView {
             CardDetailView()
                 .navigationBarTitleDisplayMode(.inline)
-                .navigationTitle("카드카드!")
+                .navigationTitle("Card!")
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
@@ -26,10 +26,6 @@ struct SingleCardView_Previews: PreviewProvider {
         Group {
             SingleCardView()
                 .environmentObject(ViewState())
-            SingleCardView()
-                .previewDevice("iPod touch (7th generation)")
-                .environmentObject(ViewState())
-
         }
     }
 }

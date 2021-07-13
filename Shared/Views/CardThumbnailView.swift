@@ -12,8 +12,8 @@ struct CardThumbnailView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 15)
-                .foregroundColor(.gray)
-                .frame(width: 150, height: 250, alignment: .center)
+                .foregroundColor(.random())
+                .frame(width: Settings.thumbnailSize.width, height: Settings.thumbnailSize.height, alignment: .center)
         
             Text("🤡")
         }
