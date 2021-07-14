@@ -16,10 +16,10 @@ struct CardDetailView: View {
     var body: some View {
         content
             .modifier(CardToolbar(currentModal: $currentModal))
-            .sheet(item: $currentModal) { item in
+            .sheet(item: $currentModal) { item in // item 변화에 반응해 sheet 표시!
                 switch item {
                 case .stickerPicker:
-                    EmptyView()
+                    StickerPicker()
                 default:
                     EmptyView()
                 }
