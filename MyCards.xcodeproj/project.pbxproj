@@ -25,6 +25,14 @@
 		C090CD09269E6E2C00EA9577 /* Stickers in Resources */ = {isa = PBXBuildFile; fileRef = C090CD07269E6E2C00EA9577 /* Stickers */; };
 		C090CD12269E6ED000EA9577 /* StickerPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C090CD11269E6ED000EA9577 /* StickerPicker.swift */; };
 		C090CD13269E6ED000EA9577 /* StickerPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C090CD11269E6ED000EA9577 /* StickerPicker.swift */; };
+		C090CD30269E8D5400EA9577 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C090CD2F269E8D5400EA9577 /* PhotoPicker.swift */; };
+		C090CD31269E8D5400EA9577 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C090CD2F269E8D5400EA9577 /* PhotoPicker.swift */; };
+		C090CD34269E8F3000EA9577 /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C090CD32269E8F3000EA9577 /* MessageTableViewCell.xib */; };
+		C090CD35269E8F3000EA9577 /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C090CD32269E8F3000EA9577 /* MessageTableViewCell.xib */; };
+		C090CD36269E8F3000EA9577 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C090CD33269E8F3000EA9577 /* MessageTableViewCell.swift */; };
+		C090CD37269E8F3000EA9577 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C090CD33269E8F3000EA9577 /* MessageTableViewCell.swift */; };
+		C090CD39269E917500EA9577 /* SpotCellTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C090CD38269E917500EA9577 /* SpotCellTextView.swift */; };
+		C090CD3A269E917500EA9577 /* SpotCellTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C090CD38269E917500EA9577 /* SpotCellTextView.swift */; };
 		C09325E4269BE47600D689CC /* MyCardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09325D1269BE47400D689CC /* MyCardsApp.swift */; };
 		C09325E5269BE47600D689CC /* MyCardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09325D1269BE47400D689CC /* MyCardsApp.swift */; };
 		C09325E6269BE47600D689CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09325D2269BE47400D689CC /* ContentView.swift */; };
@@ -72,6 +80,10 @@
 		C090CD04269E6C3300EA9577 /* CardModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardModal.swift; sourceTree = "<group>"; };
 		C090CD07269E6E2C00EA9577 /* Stickers */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Stickers; path = "../../MyCards-assets/Stickers"; sourceTree = "<group>"; };
 		C090CD11269E6ED000EA9577 /* StickerPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerPicker.swift; sourceTree = "<group>"; };
+		C090CD2F269E8D5400EA9577 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+		C090CD32269E8F3000EA9577 /* MessageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
+		C090CD33269E8F3000EA9577 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		C090CD38269E917500EA9577 /* SpotCellTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotCellTextView.swift; sourceTree = "<group>"; };
 		C09325D1269BE47400D689CC /* MyCardsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsApp.swift; sourceTree = "<group>"; };
 		C09325D2269BE47400D689CC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C09325D3269BE47600D689CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -156,9 +168,21 @@
 		C090CD0A269E6E8400EA9577 /* CardModalViews */ = {
 			isa = PBXGroup;
 			children = (
+				C090CD3B269E91AB00EA9577 /* SpotCellText */,
 				C090CD11269E6ED000EA9577 /* StickerPicker.swift */,
+				C090CD2F269E8D5400EA9577 /* PhotoPicker.swift */,
 			);
 			path = CardModalViews;
+			sourceTree = "<group>";
+		};
+		C090CD3B269E91AB00EA9577 /* SpotCellText */ = {
+			isa = PBXGroup;
+			children = (
+				C090CD38269E917500EA9577 /* SpotCellTextView.swift */,
+				C090CD33269E8F3000EA9577 /* MessageTableViewCell.swift */,
+				C090CD32269E8F3000EA9577 /* MessageTableViewCell.xib */,
+			);
+			path = SpotCellText;
 			sourceTree = "<group>";
 		};
 		C09325CB269BE47400D689CC = {
@@ -362,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0B56493269D3039007237E4 /* Preview Assets.xcassets in Resources */,
+				C090CD34269E8F3000EA9577 /* MessageTableViewCell.xib in Resources */,
 				C090CD08269E6E2C00EA9577 /* Stickers in Resources */,
 				C09325E8269BE47600D689CC /* Assets.xcassets in Resources */,
 			);
@@ -372,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0B56494269D3039007237E4 /* Preview Assets.xcassets in Resources */,
+				C090CD35269E8F3000EA9577 /* MessageTableViewCell.xib in Resources */,
 				C090CD09269E6E2C00EA9577 /* Stickers in Resources */,
 				C09325E9269BE47600D689CC /* Assets.xcassets in Resources */,
 			);
@@ -394,6 +420,8 @@
 				C0B56499269D3073007237E4 /* TextExtensions.swift in Sources */,
 				C09325E6269BE47600D689CC /* ContentView.swift in Sources */,
 				C00D82C8269C31E900455483 /* Transform.swift in Sources */,
+				C090CD30269E8D5400EA9577 /* PhotoPicker.swift in Sources */,
+				C090CD36269E8F3000EA9577 /* MessageTableViewCell.swift in Sources */,
 				C09325F3269BE55300D689CC /* CardsListView.swift in Sources */,
 				C093268F269C032E00D689CC /* ViewState.swift in Sources */,
 				C09325E4269BE47600D689CC /* MyCardsApp.swift in Sources */,
@@ -401,6 +429,7 @@
 				C00D82CC269C3D8F00455483 /* Operators.swift in Sources */,
 				C0B5648B269D2B6D007237E4 /* Settings.swift in Sources */,
 				C0B56515269D59C5007237E4 /* CardElementView.swift in Sources */,
+				C090CD39269E917500EA9577 /* SpotCellTextView.swift in Sources */,
 				C00D82BB269C1BE800455483 /* CardBottomToolbar.swift in Sources */,
 				C09325F6269BE96A00D689CC /* CardThumbnailView.swift in Sources */,
 				C0B5648F269D2D30007237E4 /* CardToolbar.swift in Sources */,
@@ -421,12 +450,14 @@
 				C0932693269C045200D689CC /* CardsView.swift in Sources */,
 				C0B564D7269D3642007237E4 /* Card.swift in Sources */,
 				C00D82C6269C30B000455483 /* ResizableView.swift in Sources */,
+				C090CD37269E8F3000EA9577 /* MessageTableViewCell.swift in Sources */,
 				C09325E7269BE47600D689CC /* ContentView.swift in Sources */,
 				C0B56516269D59C5007237E4 /* CardElementView.swift in Sources */,
 				C00D82C9269C31E900455483 /* Transform.swift in Sources */,
 				C09325F4269BE55300D689CC /* CardsListView.swift in Sources */,
 				C0B564D3269D35FE007237E4 /* CardElement.swift in Sources */,
 				C090CD06269E6C3300EA9577 /* CardModal.swift in Sources */,
+				C090CD31269E8D5400EA9577 /* PhotoPicker.swift in Sources */,
 				C0932690269C032E00D689CC /* ViewState.swift in Sources */,
 				C0B56490269D2D30007237E4 /* CardToolbar.swift in Sources */,
 				C0B56497269D305E007237E4 /* PreviewData.swift in Sources */,
@@ -434,6 +465,7 @@
 				C0B5649A269D3073007237E4 /* TextExtensions.swift in Sources */,
 				C09325FA269BEC6400D689CC /* SingleCardView.swift in Sources */,
 				C00D82CD269C3D8F00455483 /* Operators.swift in Sources */,
+				C090CD3A269E917500EA9577 /* SpotCellTextView.swift in Sources */,
 				C00D82BC269C1BE800455483 /* CardBottomToolbar.swift in Sources */,
 				C09325F7269BE96A00D689CC /* CardThumbnailView.swift in Sources */,
 				C049956F269C14D0001CD798 /* CardDetailView.swift in Sources */,
