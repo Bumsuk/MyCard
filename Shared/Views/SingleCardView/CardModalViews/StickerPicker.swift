@@ -8,17 +8,28 @@
 import SwiftUI
 
 struct StickerPicker: View {
+    @Environment(\.presentationMode) var presentationMode
     @State private var stickerNames: [String] = []
+    @Binding var stickerImage: UIImage?
+    
+    let columns = [
+        GridItem(.adaptive(minimum: 120), spacing: 10),
+    ]
 
     var body: some View {
         ScrollView {
-            LazyVStack {
-                ForEach(stickerNames, id: \.self) { sticker in
-                    Image(uiImage: getImage(from: sticker))
+            LazyVGrid(columns: columns) {
+                ForEach(stickerNames, id: \.self) { name in
+                    Image(uiImage: getImage(from: name))
                         .resizable()
                         .aspectRatio(contentMode: .fit)
+                        .onTapGesture(perform: {
+                            stickerImage = getImage(from: name)
+                            presentationMode.wrappedValue.dismiss()
+                        })
                 }
             }
+            .padding([.leading, .trailing], 10)
         }
         .onAppear {
             stickerNames = loadStickers()
@@ -43,7 +54,7 @@ struct StickerPicker: View {
                 themes.append(url)
             }
         }
-        
+
         for theme in themes {
             if let files = try? fileManager.contentsOfDirectory(atPath: theme.path) {
                 for file in files {
@@ -51,10 +62,10 @@ struct StickerPicker: View {
                 }
             }
         }
-        
+
         return stickerNames
     }
-    
+
     func getImage(from path: String) -> UIImage {
         print("loading:", path)
         return UIImage(named: path)
@@ -64,7 +75,12 @@ struct StickerPicker: View {
 }
 
 struct StickerPicker_Previews: PreviewProvider {
+    @Environment(\.presentationMode) var presentationMode
+    
     static var previews: some View {
-        StickerPicker()
+        Group {
+            StickerPicker(stickerImage: .constant(.init()))
+        }
+        //.previewLayout(.fixed(width: 818, height: 414))
     }
 }

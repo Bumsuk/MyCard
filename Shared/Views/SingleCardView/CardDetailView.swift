@@ -11,6 +11,7 @@ import SwiftUI
 struct CardDetailView: View {
     @EnvironmentObject var viewState: ViewState
     @State private var currentModal: CardModal?
+    @State private var stickerImage: UIImage?
     @Binding var card: Card
         
     var body: some View {
@@ -19,7 +20,13 @@ struct CardDetailView: View {
             .sheet(item: $currentModal) { item in // item 변화에 반응해 sheet 표시!
                 switch item {
                 case .stickerPicker:
-                    StickerPicker()
+                    StickerPicker(stickerImage: $stickerImage)
+                        .onDisappear(perform: {
+                            if let stickerImage = stickerImage {
+                                card.addElement(uiImage: stickerImage)
+                            }
+                            stickerImage = nil
+                        })
                 default:
                     EmptyView()
                 }
