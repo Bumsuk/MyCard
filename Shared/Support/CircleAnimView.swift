@@ -1,5 +1,5 @@
 //
-//  CirclAnimView.swift
+//  CircleAnimView.swift
 //  MyCards
 //
 //  Created by brown on 2021/07/12.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CirclAnimView: View {
+struct CircleAnimView: View {
     @State var degrees: CGFloat = 0
     
     var body: some View {
@@ -27,6 +27,6 @@ struct CirclAnimView: View {
 
 struct CirclAnimView_Previews: PreviewProvider {
     static var previews: some View {
-        CirclAnimView()
+        CircleAnimView()
     }
 }

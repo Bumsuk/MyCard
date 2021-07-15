@@ -12,11 +12,28 @@ struct CardDetailView: View {
     @EnvironmentObject var viewState: ViewState
     @State private var currentModal: CardModal?
     @State private var stickerImage: UIImage?
+    @State private var images: [UIImage] = []
     @Binding var card: Card
         
     var body: some View {
         content
             .modifier(CardToolbar(currentModal: $currentModal))
+            .onDrop(of: [.image], isTargeted: nil, perform: { providers, point in
+                print("[onDrop!] \(providers), \(point)")
+                for item in providers {
+                    if item.canLoadObject(ofClass: UIImage.self) {
+                        item.loadObject(ofClass: UIImage.self) { image, _ in
+                            if let image = image as? UIImage {
+                                DispatchQueue.main.async {
+                                    card.addElement(uiImage: image)
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                return true
+            })
             .sheet(item: $currentModal) { item in // item 변화에 반응해 sheet 표시!
                 switch item {
                 case .stickerPicker:
@@ -26,6 +43,14 @@ struct CardDetailView: View {
                                 card.addElement(uiImage: stickerImage)
                             }
                             stickerImage = nil
+                        })
+                case .photoPicker:
+                    PhotoPicker(images: $images)
+                        .onDisappear(perform: {
+                            for image in images {
+                                card.addElement(uiImage: image)
+                            }
+                            images.removeAll()
                         })
                 default:
                     EmptyView()

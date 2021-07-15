@@ -38,6 +38,6 @@ struct CardsListView_Previews: PreviewProvider {
         CardsListView()
             .environmentObject(ViewState())
             .environmentObject(CardStore(defaultData: true))
-            .previewLayout(.sizeThatFits)
+            //.previewLayout(.sizeThatFits)
     }
 }

@@ -19,3 +19,17 @@ struct CardToolbar: ViewModifier {
     }
   }
 }
+
+
+// 임시 프리뷰
+struct CardToolbar_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationView {
+            Text("프리뷰")
+                .modifier(CardToolbar(currentModal: .constant(.frmaePicker)))
+                .navigationTitle("네비바")
+                .navigationBarTitleDisplayMode(.inline)
+        }
+        //.previewLayout(.fixed(width: 818, height: 414))
+    }
+}

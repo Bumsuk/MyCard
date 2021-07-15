@@ -34,7 +34,7 @@ struct CardBottomToolbar: View {
                 Spacer()
             }
             
-            CirclAnimView().frame(width: 60, height: 60, alignment: .center)
+            CircleAnimView().frame(width: 60, height: 60, alignment: .center)
             
         }
         .onAppear(perform: {
