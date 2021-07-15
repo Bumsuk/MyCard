@@ -18,22 +18,7 @@ struct CardDetailView: View {
     var body: some View {
         content
             .modifier(CardToolbar(currentModal: $currentModal))
-            .onDrop(of: [.image], isTargeted: nil, perform: { providers, point in
-                print("[onDrop!] \(providers), \(point)")
-                for item in providers {
-                    if item.canLoadObject(ofClass: UIImage.self) {
-                        item.loadObject(ofClass: UIImage.self) { image, _ in
-                            if let image = image as? UIImage {
-                                DispatchQueue.main.async {
-                                    card.addElement(uiImage: image)
-                                }
-                            }
-                        }
-                    }
-                }
-                
-                return true
-            })
+            .onDrop(of: [.image], delegate: CardDrop(card: $card))
             .sheet(item: $currentModal) { item in // item 변화에 반응해 sheet 표시!
                 switch item {
                 case .stickerPicker:
