@@ -19,6 +19,15 @@ struct Card: Identifiable {
         elements.append(element)
     }
     
+    mutating func update(_ element: CardElement?, frame: AnyShape) {
+        if let element = element as? ImageElement,
+           let idx = element.index(in: elements) {
+           var newElement = element
+            newElement.frame = frame
+            elements[idx] = newElement
+        }
+    }
+    
     mutating func remove(_ element: CardElement) {
         if let index =  elements.firstIndex(where: { $0.id == element.id }) {
             elements.remove(at: index)

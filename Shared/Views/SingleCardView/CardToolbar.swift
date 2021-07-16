@@ -26,7 +26,7 @@ struct CardToolbar_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             Text("프리뷰")
-                .modifier(CardToolbar(currentModal: .constant(.frmaePicker)))
+                .modifier(CardToolbar(currentModal: .constant(.framePicker)))
                 .navigationTitle("네비바")
                 .navigationBarTitleDisplayMode(.inline)
         }

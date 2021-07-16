@@ -76,6 +76,8 @@
 		C0BBB3BF26A1107A007C7A34 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BBB3BD26A1107A007C7A34 /* Shapes.swift */; };
 		C0BBB3C126A116A4007C7A34 /* FramePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BBB3C026A116A4007C7A34 /* FramePicker.swift */; };
 		C0BBB3C226A116A4007C7A34 /* FramePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BBB3C026A116A4007C7A34 /* FramePicker.swift */; };
+		C0BBB3C426A15BE3007C7A34 /* AnyShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BBB3C326A15BE3007C7A34 /* AnyShape.swift */; };
+		C0BBB3C526A15BE3007C7A34 /* AnyShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BBB3C326A15BE3007C7A34 /* AnyShape.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +122,7 @@
 		C0B56514269D59C5007237E4 /* CardElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardElementView.swift; sourceTree = "<group>"; };
 		C0BBB3BD26A1107A007C7A34 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
 		C0BBB3C026A116A4007C7A34 /* FramePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FramePicker.swift; sourceTree = "<group>"; };
+		C0BBB3C326A15BE3007C7A34 /* AnyShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyShape.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				C00D82CB269C3D8F00455483 /* Operators.swift */,
+				C0BBB3C326A15BE3007C7A34 /* AnyShape.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -457,6 +461,7 @@
 				C049956E269C14D0001CD798 /* CardDetailView.swift in Sources */,
 				C0B5648D269D2BE6007237E4 /* ColorExtensions.swift in Sources */,
 				C0B564D6269D3642007237E4 /* Card.swift in Sources */,
+				C0BBB3C426A15BE3007C7A34 /* AnyShape.swift in Sources */,
 				C090CD12269E6ED000EA9577 /* StickerPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,6 +471,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C00D82C1269C264D00455483 /* CircleAnimView.swift in Sources */,
+				C0BBB3C526A15BE3007C7A34 /* AnyShape.swift in Sources */,
 				C062B3FE26A07EF3000FE4C4 /* PencilView.swift in Sources */,
 				C0B564DA269D3737007237E4 /* CardStore.swift in Sources */,
 				C0932693269C045200D689CC /* CardsView.swift in Sources */,

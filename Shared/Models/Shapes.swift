@@ -19,6 +19,16 @@ struct Shapes: View {
     }
 }
 
+extension Shapes {
+    static let shapes: [AnyShape] = [
+        .init(Circle()),
+        .init(Rectangle()),
+        .init(Triangle()),
+        .init(Cone()),
+        .init(Lens())
+    ]
+}
+
 struct Triangle: Shape {
     func path(in rect: CGRect) -> Path {
         let width = rect.width

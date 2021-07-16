@@ -12,6 +12,7 @@ struct CardDetailView: View {
     @EnvironmentObject var viewState: ViewState
     @State private var currentModal: CardModal?
     @State private var stickerImage: UIImage?
+    @State private var frame: AnyShape?
     @State private var images: [UIImage] = []
     @Binding var card: Card
         
@@ -21,14 +22,6 @@ struct CardDetailView: View {
             .onDrop(of: [.image], delegate: CardDrop(card: $card))
             .sheet(item: $currentModal) { item in // item 변화에 반응해 sheet 표시!
                 switch item {
-                case .stickerPicker:
-                    StickerPicker(stickerImage: $stickerImage)
-                        .onDisappear(perform: {
-                            if let stickerImage = stickerImage {
-                                card.addElement(uiImage: stickerImage)
-                            }
-                            stickerImage = nil
-                        })
                 case .photoPicker:
                     PhotoPicker(images: $images)
                         .onDisappear(perform: {
@@ -36,6 +29,22 @@ struct CardDetailView: View {
                                 card.addElement(uiImage: image)
                             }
                             images.removeAll()
+                        })
+                case .framePicker:
+                    FramePicker(frame: $frame)
+                        .onDisappear(perform: {
+                            if let frame = frame {
+                                card.update(viewState.selectedElement, frame: frame)
+                            }
+                            frame = nil
+                        })
+                case .stickerPicker:
+                    StickerPicker(stickerImage: $stickerImage)
+                        .onDisappear(perform: {
+                            if let stickerImage = stickerImage {
+                                card.addElement(uiImage: stickerImage)
+                            }
+                            stickerImage = nil
                         })
                 default:
                     EmptyView()
@@ -49,18 +58,25 @@ struct CardDetailView: View {
     var content: some View {
         ZStack {
             card.backgroundColor.ignoresSafeArea()
+                .onTapGesture(perform: {
+                    viewState.selectedElement = nil
+                })
             
             ZStack {
                 ForEach(card.elements, id: \.id) { element in
-                    CardElementView(element: element)
-                        .resizableView(transform: self.bindingTransform(for: element))
-                        .frame(width: element.transform.size.width,
-                               height: element.transform.size.height)
+                    CardElementView(element: element, selected: element.id == viewState.selectedElement?.id)
                         .contextMenu {
                             Button(action: { card.remove(element) }, label: {
                                 Label("Delete", systemImage: "trash")
                             })
                         }
+                        .resizableView(transform: self.bindingTransform(for: element))
+                        .frame(width: element.transform.size.width,
+                               height: element.transform.size.height)
+                        .onTapGesture {
+                            viewState.selectedElement = element
+                        }
+                    
                 }
             }
         }

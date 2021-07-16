@@ -14,8 +14,15 @@ protocol CardElement {
     var transform: Transform { get set }
 }
 
+extension CardElement {
+    func index(in array: [CardElement]) -> Int? {
+        return array.firstIndex { $0.id == id }
+    }
+}
+
 struct ImageElement: CardElement {
     var id = UUID()
+    var frame: AnyShape? // !
     var transform = Transform()
     var image: Image
 }
@@ -28,8 +35,3 @@ struct TextElement: CardElement {
     var textFont = "San Fransisco"
 }
 
-extension CardElement {
-    func index(in array: [CardElement]) -> Int? {
-        return array.firstIndex { $0.id == id }
-    }
-}

@@ -17,6 +17,7 @@ struct MyCardsApp: App {
             CardsView()
                 .environmentObject(viewState)
                 .environmentObject(store)
+            
             // ResizableView() // 테스트용
         }
     }

@@ -21,6 +21,7 @@ struct ToolbarButtonView: View {
 }
 
 struct CardBottomToolbar: View {
+    @EnvironmentObject var viewState: ViewState
     @Binding var cardModal: CardModal?
     
     var body: some View {
@@ -31,6 +32,7 @@ struct CardBottomToolbar: View {
                 }, label: {
                     ToolbarButtonView(modal: type)
                 })
+                .disabled(checkDisable(type: type))
                 Spacer()
             }
             
@@ -40,6 +42,13 @@ struct CardBottomToolbar: View {
         .onAppear(perform: {
             
         })
+    }
+    
+    func checkDisable(type: CardModal) -> Bool {
+        print("🔥🔥", type, viewState.selectedElement)        
+        return type == .framePicker &&
+            viewState.selectedElement.self is ImageElement &&
+            viewState.selectedElement == nil
     }
 }
 
