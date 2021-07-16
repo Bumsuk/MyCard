@@ -72,6 +72,10 @@
 		C0B564DA269D3737007237E4 /* CardStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B564D8269D3737007237E4 /* CardStore.swift */; };
 		C0B56515269D59C5007237E4 /* CardElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B56514269D59C5007237E4 /* CardElementView.swift */; };
 		C0B56516269D59C5007237E4 /* CardElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B56514269D59C5007237E4 /* CardElementView.swift */; };
+		C0BBB3BE26A1107A007C7A34 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BBB3BD26A1107A007C7A34 /* Shapes.swift */; };
+		C0BBB3BF26A1107A007C7A34 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BBB3BD26A1107A007C7A34 /* Shapes.swift */; };
+		C0BBB3C126A116A4007C7A34 /* FramePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BBB3C026A116A4007C7A34 /* FramePicker.swift */; };
+		C0BBB3C226A116A4007C7A34 /* FramePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BBB3C026A116A4007C7A34 /* FramePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +118,8 @@
 		C0B564D5269D3642007237E4 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		C0B564D8269D3737007237E4 /* CardStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStore.swift; sourceTree = "<group>"; };
 		C0B56514269D59C5007237E4 /* CardElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardElementView.swift; sourceTree = "<group>"; };
+		C0BBB3BD26A1107A007C7A34 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
+		C0BBB3C026A116A4007C7A34 /* FramePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FramePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +184,7 @@
 				C090CD3B269E91AB00EA9577 /* SpotCellText */,
 				C090CD11269E6ED000EA9577 /* StickerPicker.swift */,
 				C090CD2F269E8D5400EA9577 /* PhotoPicker.swift */,
+				C0BBB3C026A116A4007C7A34 /* FramePicker.swift */,
 				C062B3FC26A07EF3000FE4C4 /* PencilView.swift */,
 			);
 			path = CardModalViews;
@@ -265,6 +272,7 @@
 				C093268E269C032E00D689CC /* ViewState.swift */,
 				C090CD04269E6C3300EA9577 /* CardModal.swift */,
 				C00D82C7269C31E900455483 /* Transform.swift */,
+				C0BBB3BD26A1107A007C7A34 /* Shapes.swift */,
 				C0B564D4269D3602007237E4 /* Card */,
 			);
 			path = Models;
@@ -419,6 +427,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C00D82C0269C264D00455483 /* CircleAnimView.swift in Sources */,
+				C0BBB3BE26A1107A007C7A34 /* Shapes.swift in Sources */,
 				C08BA7C126A0796200C5B9CE /* CardDrop.swift in Sources */,
 				C090CD05269E6C3300EA9577 /* CardModal.swift in Sources */,
 				C0932692269C045200D689CC /* CardsView.swift in Sources */,
@@ -438,6 +447,7 @@
 				C09325F9269BEC6400D689CC /* SingleCardView.swift in Sources */,
 				C00D82CC269C3D8F00455483 /* Operators.swift in Sources */,
 				C0B5648B269D2B6D007237E4 /* Settings.swift in Sources */,
+				C0BBB3C126A116A4007C7A34 /* FramePicker.swift in Sources */,
 				C0B56515269D59C5007237E4 /* CardElementView.swift in Sources */,
 				C090CD39269E917500EA9577 /* SpotCellTextView.swift in Sources */,
 				C00D82BB269C1BE800455483 /* CardBottomToolbar.swift in Sources */,
@@ -462,6 +472,7 @@
 				C0B564D7269D3642007237E4 /* Card.swift in Sources */,
 				C00D82C6269C30B000455483 /* ResizableView.swift in Sources */,
 				C090CD37269E8F3000EA9577 /* MessageTableViewCell.swift in Sources */,
+				C0BBB3BF26A1107A007C7A34 /* Shapes.swift in Sources */,
 				C09325E7269BE47600D689CC /* ContentView.swift in Sources */,
 				C0B56516269D59C5007237E4 /* CardElementView.swift in Sources */,
 				C00D82C9269C31E900455483 /* Transform.swift in Sources */,
@@ -471,6 +482,7 @@
 				C08BA7C226A0796200C5B9CE /* CardDrop.swift in Sources */,
 				C090CD31269E8D5400EA9577 /* PhotoPicker.swift in Sources */,
 				C0932690269C032E00D689CC /* ViewState.swift in Sources */,
+				C0BBB3C226A116A4007C7A34 /* FramePicker.swift in Sources */,
 				C0B56490269D2D30007237E4 /* CardToolbar.swift in Sources */,
 				C0B56497269D305E007237E4 /* PreviewData.swift in Sources */,
 				C09325E5269BE47600D689CC /* MyCardsApp.swift in Sources */,
