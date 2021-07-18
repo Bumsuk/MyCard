@@ -45,10 +45,13 @@ struct CardBottomToolbar: View {
     }
     
     func checkDisable(type: CardModal) -> Bool {
-        print("🔥🔥", type, viewState.selectedElement)        
-        return type == .framePicker &&
-            viewState.selectedElement.self is ImageElement &&
-            viewState.selectedElement == nil
+        guard type == .framePicker else { return false }
+        
+        if viewState.selectedElement != nil &&
+            viewState.selectedElement.self is ImageElement {
+            return false
+        }
+        return true
     }
 }
 

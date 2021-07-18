@@ -9,13 +9,12 @@ import SwiftUI
 
 struct CardElementView: View {
     let element: CardElement
-    let selected: Bool
+    let selected: Bool // 터치로 선택된 상태여부
 
     var body: some View {
         switch element {
         case is ImageElement:
-            ImageElementView(element: element as! ImageElement)
-                .border(Settings.borderColor, width: selected ? Settings.borderWidth : 0)
+            ImageElementView(element: element as! ImageElement, selected: selected)
         case is TextElement:
             TextElementView(element: element as! TextElement)
                 .border(Settings.borderColor, width: selected ? Settings.borderWidth : 0)
@@ -27,7 +26,8 @@ struct CardElementView: View {
 
 struct ImageElementView: View {
     let element: ImageElement
-
+    let selected: Bool // 터치로 선택된 상태여부
+    
     var bodyMain: some View {
         element.image
             .resizable()
@@ -36,9 +36,13 @@ struct ImageElementView: View {
 
     var body: some View {
         if let frame = element.frame {
-            bodyMain.clipShape(frame)
+            bodyMain
+                .clipShape(frame)
+                .overlay(frame.stroke(Settings.borderColor, lineWidth: selected ? 5.0 : 0))
+                .contentShape(frame)
         } else {
             bodyMain
+                .border(Settings.borderColor, width: selected ? Settings.borderWidth : 0)
         }
     }
 }
