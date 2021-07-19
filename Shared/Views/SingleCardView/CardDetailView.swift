@@ -10,6 +10,7 @@ import SwiftUI
 // 카드 상세뷰(네비게이션뷰에 서브뷰로 포함됨)
 struct CardDetailView: View {
     @EnvironmentObject var viewState: ViewState
+    @Environment(\.scenePhase) private var scenePhase
     @State private var currentModal: CardModal?
     @State private var stickerImage: UIImage?
     @State private var frame: AnyShape?
@@ -52,6 +53,15 @@ struct CardDetailView: View {
             }
             .onAppear(perform: {
 
+            })
+            .onDisappear(perform: {
+                card.save()
+            })
+            .onChange(of: scenePhase, perform: { newPhase in
+                print(#function, "[onChange] newPhase : \(newPhase)")
+                if newPhase == .inactive {
+                    card.save()
+                }
             })
     }
     

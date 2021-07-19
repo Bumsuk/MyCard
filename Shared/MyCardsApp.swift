@@ -10,15 +10,17 @@ import SwiftUI
 @main
 struct MyCardsApp: App {
     @StateObject var viewState = ViewState()
-    @StateObject var store = CardStore(defaultData: true)
-    
+    @StateObject var store = CardStore(defaultData: false)
+
     var body: some Scene {
         WindowGroup {
             CardsView()
                 .environmentObject(viewState)
                 .environmentObject(store)
-            
-            // ResizableView() // 테스트용
+                .onAppear(perform: {
+                    print(FileManager.documentURL ?? "")
+                })
         }
     }
 }
+
