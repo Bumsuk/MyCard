@@ -15,6 +15,7 @@ struct CardDetailView: View {
     @State private var stickerImage: UIImage?
     @State private var frame: AnyShape?
     @State private var images: [UIImage] = []
+    @State private var textElement = TextElement()
     @Binding var card: Card
         
     var body: some View {
@@ -47,8 +48,14 @@ struct CardDetailView: View {
                             }
                             stickerImage = nil
                         })
-                default:
-                    EmptyView()
+                case .textPicker:
+                    TextPicker(textElement: $textElement)
+                        .onDisappear(perform: {
+                            if !textElement.text.isEmpty {
+                                card.addElement(textElement)
+                            }
+                            textElement = TextElement()
+                        })
                 }
             }
             .onAppear(perform: {

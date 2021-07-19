@@ -81,6 +81,7 @@
 		C0F39C3E26A508F200F7862D /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F39C3C26A508F200F7862D /* UIImageExtensions.swift */; };
 		C0F39C3F26A508F200F7862D /* FileManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F39C3D26A508F200F7862D /* FileManagerExtensions.swift */; };
 		C0F39C4126A50C2400F7862D /* AngleExtensions.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F39C4026A50C2400F7862D /* AngleExtensions.swift.swift */; };
+		C0F39C4326A548AB00F7862D /* TextPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F39C4226A548AB00F7862D /* TextPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -129,6 +130,7 @@
 		C0F39C3C26A508F200F7862D /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		C0F39C3D26A508F200F7862D /* FileManagerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManagerExtensions.swift; sourceTree = "<group>"; };
 		C0F39C4026A50C2400F7862D /* AngleExtensions.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleExtensions.swift.swift; sourceTree = "<group>"; };
+		C0F39C4226A548AB00F7862D /* TextPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TextPicker.swift; path = ../../../../../../../../../../../../../../Documents/01_Spot/TextPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 				C090CD11269E6ED000EA9577 /* StickerPicker.swift */,
 				C090CD2F269E8D5400EA9577 /* PhotoPicker.swift */,
 				C0BBB3C026A116A4007C7A34 /* FramePicker.swift */,
+				C0F39C4226A548AB00F7862D /* TextPicker.swift */,
 				C062B3FC26A07EF3000FE4C4 /* PencilView.swift */,
 			);
 			path = CardModalViews;
@@ -474,6 +477,7 @@
 				C090CD39269E917500EA9577 /* SpotCellTextView.swift in Sources */,
 				C00D82BB269C1BE800455483 /* CardBottomToolbar.swift in Sources */,
 				C09325F6269BE96A00D689CC /* CardThumbnailView.swift in Sources */,
+				C0F39C4326A548AB00F7862D /* TextPicker.swift in Sources */,
 				C0B5648F269D2D30007237E4 /* CardToolbar.swift in Sources */,
 				C0F39C4126A50C2400F7862D /* AngleExtensions.swift.swift in Sources */,
 				C0B56488269D257A007237E4 /* ViewExtensions.swift in Sources */,

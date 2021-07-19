@@ -7,9 +7,18 @@
 
 import SwiftUI
 
-struct AnyShape: Shape {
+struct AnyShape: Shape, Equatable {
+    static func == (lhs: AnyShape, rhs: AnyShape) -> Bool {
+        let rect = CGRect(origin: .zero, size: .init(width: 100, height: 100))
+
+        let lhsPath = lhs.path(in: rect)
+        let rhsPath = rhs.path(in: rect)
+        
+        return lhsPath == rhsPath
+    }
+
     private let path: (CGRect) -> Path
-    
+
     func path(in rect: CGRect) -> Path {
         path(rect)
     }
