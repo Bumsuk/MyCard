@@ -82,6 +82,7 @@
 		C0F39C3F26A508F200F7862D /* FileManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F39C3D26A508F200F7862D /* FileManagerExtensions.swift */; };
 		C0F39C4126A50C2400F7862D /* AngleExtensions.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F39C4026A50C2400F7862D /* AngleExtensions.swift.swift */; };
 		C0F39C4326A548AB00F7862D /* TextPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F39C4226A548AB00F7862D /* TextPicker.swift */; };
+		C0F39C6026A561A800F7862D /* CardModals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F39C5F26A561A800F7862D /* CardModals.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,6 +132,7 @@
 		C0F39C3D26A508F200F7862D /* FileManagerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManagerExtensions.swift; sourceTree = "<group>"; };
 		C0F39C4026A50C2400F7862D /* AngleExtensions.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleExtensions.swift.swift; sourceTree = "<group>"; };
 		C0F39C4226A548AB00F7862D /* TextPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TextPicker.swift; path = ../../../../../../../../../../../../../../Documents/01_Spot/TextPicker.swift; sourceTree = "<group>"; };
+		C0F39C5F26A561A800F7862D /* CardModals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModals.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 				C090CD0A269E6E8400EA9577 /* CardModalViews */,
 				C09325F8269BEC6400D689CC /* SingleCardView.swift */,
 				C049956D269C14D0001CD798 /* CardDetailView.swift */,
+				C0F39C5F26A561A800F7862D /* CardModals.swift */,
 				C0B56514269D59C5007237E4 /* CardElementView.swift */,
 				C00D82BA269C1BE800455483 /* CardBottomToolbar.swift */,
 				C0B5648E269D2D30007237E4 /* CardToolbar.swift */,
@@ -485,6 +488,7 @@
 				C0B5648D269D2BE6007237E4 /* ColorExtensions.swift in Sources */,
 				C0B564D6269D3642007237E4 /* Card.swift in Sources */,
 				C0BBB3C426A15BE3007C7A34 /* AnyShape.swift in Sources */,
+				C0F39C6026A561A800F7862D /* CardModals.swift in Sources */,
 				C090CD12269E6ED000EA9577 /* StickerPicker.swift in Sources */,
 				C0F39C3E26A508F200F7862D /* UIImageExtensions.swift in Sources */,
 			);
