@@ -27,6 +27,10 @@ struct CardElementView: View {
 struct ImageElementView: View {
     let element: ImageElement
     let selected: Bool // 터치로 선택된 상태여부
+    let angGradient = AngularGradient(gradient: Gradient(colors: [.red, .yellow, .green, .blue, .purple, .red]),
+                                      center: .center,
+                                      startAngle: .zero,
+                                      endAngle: .degrees(360))
     
     var bodyMain: some View {
         element.image

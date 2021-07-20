@@ -11,30 +11,39 @@ import SwiftUI
 struct CardsView: View {
     @EnvironmentObject var viewState: ViewState
     @EnvironmentObject var store: CardStore
-    
+
     @State var count: Int = 0
-    
+
+    var createButton: some View {
+        Button(action: {
+            viewState.selectedCard = store.addCard()
+            viewState.showAllCards = false
+        }, label: {
+            Label("Create New", systemImage: "plus")
+                .frame(maxWidth: .infinity)
+        })
+        .font(.system(size: 16, weight: .bold))
+        .frame(maxWidth: .infinity)
+        .padding([.top, .bottom], 10)
+        .background(Color("barColor"))
+    }
+
     var body: some View {
         ZStack {
+            CardsListView()
+
             VStack {
-                Button(action: {
-                    viewState.selectedCard = store.addCard()
-                    viewState.showAllCards = false
-                }, label: {
-                    Text("Add Card")
-                })
-                
-                CardsListView()
+                Spacer()
+                createButton
             }
-            
+
             if !viewState.showAllCards {
                 SingleCardView()
             }
         }
-        //.background(Color("background").edgesIgnoringSafeArea(.all))
-        .background(Color.red.edgesIgnoringSafeArea(.all))
-        .onAppear(perform: {
-        })
+        // .background(Color("background").edgesIgnoringSafeArea(.all))
+        .background(Color.gray.opacity(0.3).edgesIgnoringSafeArea(.all))
+        .onAppear(perform: {})
     }
 }
 
@@ -44,6 +53,13 @@ struct CardsView_Previews: PreviewProvider {
             CardsView()
                 .environmentObject(ViewState())
                 .environmentObject(CardStore(defaultData: true))
+            
+            /*
+            CardsView()
+                .previewDevice("iPod touch (7th generation)")
+                .environmentObject(ViewState())
+                .environmentObject(CardStore(defaultData: true))
+            */
         }
     }
 }

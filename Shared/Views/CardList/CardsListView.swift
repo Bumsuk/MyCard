@@ -12,12 +12,16 @@ struct CardsListView: View {
     @EnvironmentObject var viewState: ViewState
     @EnvironmentObject var store: CardStore
 
+    func columns(size: CGSize) -> [GridItem] {
+         [GridItem(.adaptive(minimum: Settings.thumbnailSize(size: size).width))]
+    }
+
     var body: some View {
         GeometryReader { proxy in
             ScrollView(.vertical, showsIndicators: false) {
-                VStack {
+                LazyVGrid(columns: columns(size: proxy.size)) {
                     ForEach(store.cards) { card in
-                        CardThumbnailView(card: card)
+                        CardThumbnailView(card: card, size: proxy.size)
                             .contextMenu(menuItems: {
                                 // swiftlint:disable:next multiple_closures_with_trailing_closure
                                 Button(action: { store.remove(card) }) {
@@ -30,6 +34,7 @@ struct CardsListView: View {
                             }
                     }
                 }
+                .padding(.all, 10)
             }
         }
     }
@@ -37,9 +42,20 @@ struct CardsListView: View {
 
 struct CardsListView_Previews: PreviewProvider {
     static var previews: some View {
-        CardsListView()
-            .environmentObject(ViewState())
-            .environmentObject(CardStore(defaultData: true))
-            //.previewLayout(.sizeThatFits)
+        Group {
+            CardsListView()
+                .environmentObject(ViewState())
+                .environmentObject(CardStore(defaultData: true))
+                // .previewLayout(.fixed(width: 700, height: 300))
+            CardsListView()
+                .previewDevice("iPod touch (7th generation)")
+                .environmentObject(ViewState())
+                .environmentObject(CardStore(defaultData: true))
+            CardsListView()
+                .previewDevice("iPad Pro (11-inch) (3rd generation)")
+                .environmentObject(ViewState())
+                .environmentObject(CardStore(defaultData: true))
+        }
+        // .previewLayout(.sizeThatFits)
     }
 }
