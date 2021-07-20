@@ -23,12 +23,16 @@ struct CardsView: View {
                 }, label: {
                     Text("Add Card")
                 })
+                
                 CardsListView()
             }
+            
             if !viewState.showAllCards {
                 SingleCardView()
             }
         }
+        //.background(Color("background").edgesIgnoringSafeArea(.all))
+        .background(Color.red.edgesIgnoringSafeArea(.all))
         .onAppear(perform: {
         })
     }

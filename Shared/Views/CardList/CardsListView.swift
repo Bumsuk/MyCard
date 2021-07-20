@@ -13,20 +13,22 @@ struct CardsListView: View {
     @EnvironmentObject var store: CardStore
 
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
-            VStack {
-                ForEach(store.cards) { card in
-                    CardThumbnailView(card: card)
-                        .contextMenu(menuItems: {
-                            // swiftlint:disable:next multiple_closures_with_trailing_closure
-                            Button(action: { store.remove(card) }) {
-                                Label("Delete", systemImage: "trash")
+        GeometryReader { proxy in
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack {
+                    ForEach(store.cards) { card in
+                        CardThumbnailView(card: card)
+                            .contextMenu(menuItems: {
+                                // swiftlint:disable:next multiple_closures_with_trailing_closure
+                                Button(action: { store.remove(card) }) {
+                                    Label("Delete", systemImage: "trash")
+                                }
+                            })
+                            .onTapGesture {
+                                viewState.selectedCard = card
+                                viewState.showAllCards.toggle()
                             }
-                        })
-                        .onTapGesture {
-                            viewState.selectedCard = card
-                            viewState.showAllCards.toggle()
-                        }
+                    }
                 }
             }
         }

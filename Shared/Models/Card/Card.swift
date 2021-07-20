@@ -26,6 +26,17 @@ struct Card: Identifiable {
         save()
     }
     
+    mutating func addElement(uiImage: UIImage,
+                             transform: Transform = Transform()) {
+        let imageFilename = uiImage.save()
+        let image = Image(uiImage: uiImage)
+        let element = ImageElement(transform: transform,
+                                   image: image,
+                                   imageFilename: imageFilename)
+        elements.append(element)
+        save()
+    }
+    
     mutating func update(_ element: CardElement?, frame: AnyShape) {
         if let element = element as? ImageElement,
            let idx = element.index(in: elements) {
