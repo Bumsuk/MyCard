@@ -47,6 +47,7 @@ struct CardsListView_Previews: PreviewProvider {
                 .environmentObject(ViewState())
                 .environmentObject(CardStore(defaultData: true))
                 // .previewLayout(.fixed(width: 700, height: 300))
+            /*
             CardsListView()
                 .previewDevice("iPod touch (7th generation)")
                 .environmentObject(ViewState())
@@ -55,6 +56,7 @@ struct CardsListView_Previews: PreviewProvider {
                 .previewDevice("iPad Pro (11-inch) (3rd generation)")
                 .environmentObject(ViewState())
                 .environmentObject(CardStore(defaultData: true))
+            */
         }
         // .previewLayout(.sizeThatFits)
     }

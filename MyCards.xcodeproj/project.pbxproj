@@ -21,6 +21,8 @@
 		C049956F269C14D0001CD798 /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C049956D269C14D0001CD798 /* CardDetailView.swift */; };
 		C062B3FD26A07EF3000FE4C4 /* PencilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C062B3FC26A07EF3000FE4C4 /* PencilView.swift */; };
 		C062B3FE26A07EF3000FE4C4 /* PencilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C062B3FC26A07EF3000FE4C4 /* PencilView.swift */; };
+		C0785DF226A7165800EC8D25 /* TextPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0785DF126A7165800EC8D25 /* TextPicker.swift */; };
+		C0785DF326A7165800EC8D25 /* TextPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0785DF126A7165800EC8D25 /* TextPicker.swift */; };
 		C08BA7C126A0796200C5B9CE /* CardDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08BA7C026A0796200C5B9CE /* CardDrop.swift */; };
 		C08BA7C226A0796200C5B9CE /* CardDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08BA7C026A0796200C5B9CE /* CardDrop.swift */; };
 		C090CD05269E6C3300EA9577 /* CardModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C090CD04269E6C3300EA9577 /* CardModal.swift */; };
@@ -81,7 +83,6 @@
 		C0F39C3E26A508F200F7862D /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F39C3C26A508F200F7862D /* UIImageExtensions.swift */; };
 		C0F39C3F26A508F200F7862D /* FileManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F39C3D26A508F200F7862D /* FileManagerExtensions.swift */; };
 		C0F39C4126A50C2400F7862D /* AngleExtensions.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F39C4026A50C2400F7862D /* AngleExtensions.swift.swift */; };
-		C0F39C4326A548AB00F7862D /* TextPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F39C4226A548AB00F7862D /* TextPicker.swift */; };
 		C0F39C6026A561A800F7862D /* CardModals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F39C5F26A561A800F7862D /* CardModals.swift */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +94,7 @@
 		C00D82CB269C3D8F00455483 /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		C049956D269C14D0001CD798 /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
 		C062B3FC26A07EF3000FE4C4 /* PencilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilView.swift; sourceTree = "<group>"; };
+		C0785DF126A7165800EC8D25 /* TextPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextPicker.swift; sourceTree = "<group>"; };
 		C08BA7C026A0796200C5B9CE /* CardDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDrop.swift; sourceTree = "<group>"; };
 		C090CD04269E6C3300EA9577 /* CardModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardModal.swift; sourceTree = "<group>"; };
 		C090CD07269E6E2C00EA9577 /* Stickers */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Stickers; path = "../../MyCards-assets/Stickers"; sourceTree = "<group>"; };
@@ -131,7 +133,6 @@
 		C0F39C3C26A508F200F7862D /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		C0F39C3D26A508F200F7862D /* FileManagerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManagerExtensions.swift; sourceTree = "<group>"; };
 		C0F39C4026A50C2400F7862D /* AngleExtensions.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleExtensions.swift.swift; sourceTree = "<group>"; };
-		C0F39C4226A548AB00F7862D /* TextPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TextPicker.swift; path = ../../../../../../../../../../../../../../Documents/01_Spot/TextPicker.swift; sourceTree = "<group>"; };
 		C0F39C5F26A561A800F7862D /* CardModals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModals.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -200,7 +201,7 @@
 				C090CD11269E6ED000EA9577 /* StickerPicker.swift */,
 				C090CD2F269E8D5400EA9577 /* PhotoPicker.swift */,
 				C0BBB3C026A116A4007C7A34 /* FramePicker.swift */,
-				C0F39C4226A548AB00F7862D /* TextPicker.swift */,
+				C0785DF126A7165800EC8D25 /* TextPicker.swift */,
 				C062B3FC26A07EF3000FE4C4 /* PencilView.swift */,
 			);
 			path = CardModalViews;
@@ -475,12 +476,12 @@
 				C09325F9269BEC6400D689CC /* SingleCardView.swift in Sources */,
 				C00D82CC269C3D8F00455483 /* Operators.swift in Sources */,
 				C0B5648B269D2B6D007237E4 /* Settings.swift in Sources */,
+				C0785DF226A7165800EC8D25 /* TextPicker.swift in Sources */,
 				C0BBB3C126A116A4007C7A34 /* FramePicker.swift in Sources */,
 				C0B56515269D59C5007237E4 /* CardElementView.swift in Sources */,
 				C090CD39269E917500EA9577 /* SpotCellTextView.swift in Sources */,
 				C00D82BB269C1BE800455483 /* CardBottomToolbar.swift in Sources */,
 				C09325F6269BE96A00D689CC /* CardThumbnailView.swift in Sources */,
-				C0F39C4326A548AB00F7862D /* TextPicker.swift in Sources */,
 				C0B5648F269D2D30007237E4 /* CardToolbar.swift in Sources */,
 				C0F39C4126A50C2400F7862D /* AngleExtensions.swift.swift in Sources */,
 				C0B56488269D257A007237E4 /* ViewExtensions.swift in Sources */,
@@ -524,6 +525,7 @@
 				C09325FA269BEC6400D689CC /* SingleCardView.swift in Sources */,
 				C00D82CD269C3D8F00455483 /* Operators.swift in Sources */,
 				C090CD3A269E917500EA9577 /* SpotCellTextView.swift in Sources */,
+				C0785DF326A7165800EC8D25 /* TextPicker.swift in Sources */,
 				C00D82BC269C1BE800455483 /* CardBottomToolbar.swift in Sources */,
 				C09325F7269BE96A00D689CC /* CardThumbnailView.swift in Sources */,
 				C049956F269C14D0001CD798 /* CardDetailView.swift in Sources */,

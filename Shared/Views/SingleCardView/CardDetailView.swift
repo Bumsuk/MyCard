@@ -16,9 +16,16 @@ struct CardDetailView: View {
         
     var body: some View {
         GeometryReader { proxy in
-            content
+            content(size: proxy.size)
                 .modifier(CardToolbar(currentModal: $currentModal))
                 .modifier(CardModals(card: $card, currentModal: $currentModal))
+
+                .frame(width: calculateSize(proxy.size).width,
+                       height: calculateSize(proxy.size).height)
+                .clipped()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+
+                
                 .onDrop(of: [.image], delegate: CardDrop(card: $card))
                 .onDisappear(perform: {
                     card.save()
@@ -28,11 +35,11 @@ struct CardDetailView: View {
                     if newPhase == .inactive {
                         card.save()
                     }
-            })
+                })
         }
     }
     
-    var content: some View {
+    func content(size: CGSize) -> some View {
         ZStack {
             card.backgroundColor.ignoresSafeArea()
                 .onTapGesture(perform: {
@@ -41,19 +48,20 @@ struct CardDetailView: View {
             
             ZStack {
                 ForEach(card.elements, id: \.id) { element in
-                    CardElementView(element: element, selected: element.id == viewState.selectedElement?.id)
+                    CardElementView(element: element,
+                                    selected: element.id == viewState.selectedElement?.id)
                         .contextMenu {
                             Button(action: { card.remove(element) }, label: {
                                 Label("Delete", systemImage: "trash")
                             })
                         }
-                        .resizableView(transform: self.bindingTransform(for: element))
+                        .resizableView(transform: self.bindingTransform(for: element),
+                                       viewScale: calculateScale(size))
                         .frame(width: element.transform.size.width,
                                height: element.transform.size.height)
                         .onTapGesture {
                             viewState.selectedElement = element
                         }
-                    
                 }
             }
         }
@@ -69,13 +77,7 @@ struct CardDetailView: View {
     // 사이즈 계산? 종횡비 계산이 왤케 이해가 안되냐?? 가로/세로 나누기 비율인데 계산식이 좀...
     func calculateSize(_ size: CGSize) -> CGSize {
         var newSize = size
-        let ratio = Settings.cardSize.width / Settings.cardSize.height
-        
-        /*
-        400 x 300 > 1.33 ratio
-         
-         600 * 1.33 = 451
-        */
+        let ratio = Settings.cardSize.width / Settings.cardSize.height // 1300 x 2000
         
         if size.width < size.height { // 포트레이트
             newSize.height = min(size.height, newSize.width / ratio)
@@ -92,11 +94,9 @@ struct CardDetailView: View {
         let newSize = calculateSize(size)
         return newSize.width / Settings.cardSize.width
     }
-
 }
 
 struct CardDetailView_Previews: PreviewProvider {
- 
     struct CardDetailPreview: View {
         @State var card = initialCards[0]
         
