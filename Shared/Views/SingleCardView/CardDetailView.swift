@@ -15,19 +15,21 @@ struct CardDetailView: View {
     @Binding var card: Card
         
     var body: some View {
-        content
-            .modifier(CardToolbar(currentModal: $currentModal))
-            .modifier(CardModals(card: $card, currentModal: $currentModal))
-            .onDrop(of: [.image], delegate: CardDrop(card: $card))
-            .onDisappear(perform: {
-                card.save()
-            })
-            .onChange(of: scenePhase, perform: { newPhase in
-                print(#function, "[onChange] newPhase : \(newPhase)")
-                if newPhase == .inactive {
+        GeometryReader { proxy in
+            content
+                .modifier(CardToolbar(currentModal: $currentModal))
+                .modifier(CardModals(card: $card, currentModal: $currentModal))
+                .onDrop(of: [.image], delegate: CardDrop(card: $card))
+                .onDisappear(perform: {
                     card.save()
-                }
+                })
+                .onChange(of: scenePhase, perform: { newPhase in
+                    print(#function, "[onChange] newPhase : \(newPhase)")
+                    if newPhase == .inactive {
+                        card.save()
+                    }
             })
+        }
     }
     
     var content: some View {
@@ -39,8 +41,7 @@ struct CardDetailView: View {
             
             ZStack {
                 ForEach(card.elements, id: \.id) { element in
-                    CardElementView(element: element,
-                                    selected: element.id == viewState.selectedElement?.id)
+                    CardElementView(element: element, selected: element.id == viewState.selectedElement?.id)
                         .contextMenu {
                             Button(action: { card.remove(element) }, label: {
                                 Label("Delete", systemImage: "trash")
@@ -64,6 +65,34 @@ struct CardDetailView: View {
         }
         return $card.elements[index].transform
     }
+    
+    // 사이즈 계산? 종횡비 계산이 왤케 이해가 안되냐?? 가로/세로 나누기 비율인데 계산식이 좀...
+    func calculateSize(_ size: CGSize) -> CGSize {
+        var newSize = size
+        let ratio = Settings.cardSize.width / Settings.cardSize.height
+        
+        /*
+        400 x 300 > 1.33 ratio
+         
+         600 * 1.33 = 451
+        */
+        
+        if size.width < size.height { // 포트레이트
+            newSize.height = min(size.height, newSize.width / ratio)
+            newSize.width = min(size.width, newSize.height * ratio)
+        } else { // 랜드스케이프
+            newSize.width = min(size.width, newSize.height * ratio)
+            newSize.height = min(size.height, newSize.width / ratio)
+        }
+        
+        return newSize
+    }
+    
+    func calculateScale(_ size: CGSize) -> CGFloat {
+        let newSize = calculateSize(size)
+        return newSize.width / Settings.cardSize.width
+    }
+
 }
 
 struct CardDetailView_Previews: PreviewProvider {

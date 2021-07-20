@@ -26,6 +26,7 @@ struct CardsView: View {
         .frame(maxWidth: .infinity)
         .padding([.top, .bottom], 10)
         .background(Color("barColor"))
+        .accentColor(.white)
     }
 
     var body: some View {
@@ -42,7 +43,7 @@ struct CardsView: View {
             }
         }
         // .background(Color("background").edgesIgnoringSafeArea(.all))
-        .background(Color.gray.opacity(0.3).edgesIgnoringSafeArea(.all))
+        //.background(Color.gray.opacity(0.3).edgesIgnoringSafeArea(.all))
         .onAppear(perform: {})
     }
 }
@@ -53,6 +54,9 @@ struct CardsView_Previews: PreviewProvider {
             CardsView()
                 .environmentObject(ViewState())
                 .environmentObject(CardStore(defaultData: true))
+                //.preferredColorScheme(.light)
+                .preferredColorScheme(.dark)
+            
             
             /*
             CardsView()
