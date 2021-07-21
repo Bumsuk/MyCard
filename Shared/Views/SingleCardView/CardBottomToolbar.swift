@@ -22,10 +22,12 @@ struct ToolbarButtonView: View {
 
 struct CardBottomToolbar: View {
     @EnvironmentObject var viewState: ViewState
+    @Environment(\.verticalSizeClass) var verticalSizeClass // ! 중요
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass // ! 중요
     @Binding var cardModal: CardModal?
     
     var body: some View {
-        HStack(spacing: 10) {
+        HStack(alignment: .center, spacing: 10) {
             ForEach(CardModal.allCases, id: \.self) { type in
                 Button(action: {
                     cardModal = type
@@ -40,7 +42,7 @@ struct CardBottomToolbar: View {
             
         }
         .onAppear(perform: {
-            
+            print("🔥 [verticalSizeClass] \(verticalSizeClass), [horizontalSizeClass] \(horizontalSizeClass)")
         })
     }
     

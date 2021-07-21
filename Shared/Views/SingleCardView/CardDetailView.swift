@@ -26,7 +26,16 @@ struct CardDetailView: View {
                 .clipped()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 
-                .onDrop(of: [.image], delegate: CardDrop(card: $card))
+                .onDrop(of: [.image], delegate: CardDrop(card: $card,
+                                                         size: proxy.size,
+                                                         frame: proxy.frame(in: .global)))
+                .onAppear(perform: {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        print("[size] \(proxy.size)")
+                        print("[frame - .local] \(proxy.frame(in: .local))")
+                        print("[frame - .global] \(proxy.frame(in: .global))")
+                    }
+                })
                 .onDisappear(perform: {
                     card.save()
                 })
