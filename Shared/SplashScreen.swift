@@ -9,8 +9,25 @@ import SwiftUI
 
 struct SplashScreen: View {
     var body: some View {
-        card(letter: "C", color: "appColor7")
-            .modifier(SplashAnimation(finalYPosition: 200, delay: 0))
+        ZStack(alignment: .center) {
+            Color("background")
+
+            card(letter: "S", color: "appColor1")
+                .modifier(SplashAnimation(finalYPosition: 240, delay: 0))
+            
+            card(letter: "D", color: "appColor2")
+                .rotationEffect(.degrees(10))
+                .modifier(SplashAnimation(finalYPosition: 120, delay: 0.2))
+
+            card(letter: "R", color: "appColor3")
+                .modifier(SplashAnimation(finalYPosition: 0, delay: 0.4))
+            
+            card(letter: "A", color: "appColor6")
+                .modifier(SplashAnimation(finalYPosition: -120, delay: 0.6))
+            
+            card(letter: "C", color: "appColor7")
+                .modifier(SplashAnimation(finalYPosition: -240, delay: 0.8))
+        }
     }
 
     func card(letter: String, color: String) -> some View {
@@ -45,8 +62,11 @@ private struct SplashAnimation: ViewModifier {
     func body(content: Content) -> some View {
         content
             .offset(x: 0, y: animating ? -700 : finalYPosition)
+//            .transaction {
+//                $0.animation = $0.animation?.delay(delay)
+//            }
             .onAppear(perform: {
-                withAnimation {
+                withAnimation(.easeInOut(duration: 0.5).delay(delay)) {
                     animating = false
                 }
             })
