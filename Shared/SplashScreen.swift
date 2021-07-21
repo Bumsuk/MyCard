@@ -65,10 +65,14 @@ private struct SplashAnimation: ViewModifier {
 //            .transaction {
 //                $0.animation = $0.animation?.delay(delay)
 //            }
+            .rotationEffect(.degrees(Double.random(in: -10...10)), anchor: .center)
             .onAppear(perform: {
-                withAnimation(.easeInOut(duration: 0.5).delay(delay)) {
+                //withAnimation(.easeInOut(duration: 0.5).delay(delay)) {
+                withAnimation(.interpolatingSpring(mass: 0.2, stiffness: 80, damping: 5, initialVelocity: 0.0).delay(delay)) {
                     animating = false
                 }
+//                withAnimation(.interpolatingSpring(stiffness: 10, damping: 80).delay(delay)) {
+//                }
             })
     }
 }
