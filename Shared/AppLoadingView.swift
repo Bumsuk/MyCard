@@ -14,9 +14,10 @@ struct AppLoadingView: View {
         if showSplash {
             SplashScreen()
                 .edgesIgnoringSafeArea(.all)
+                .transition(.asymmetric(insertion: .slide, removal: .move(edge: .leading)))
                 .onAppear(perform: {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                        withAnimation(.linear(duration: 1)) {
+                        withAnimation(.linear(duration: 3)) {
                             showSplash = false
                         }
                     }
@@ -24,7 +25,11 @@ struct AppLoadingView: View {
         } else {
             CardsView()
                 //.transition(.move(edge: .trailing))
-                .transition(.slide.combined(with: .scale(scale: 0.5)))
+                //.transition(.slide.combined(with: .scale))
+                .transition(.scale(scale: 0, anchor: .bottomLeading))
+                // .transition(.move(edge: .bottom))
+                //.transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .bottom)))
+                //.transition(.asymmetric(insertion: .slide, removal: .scale))
         }
     }
 }
