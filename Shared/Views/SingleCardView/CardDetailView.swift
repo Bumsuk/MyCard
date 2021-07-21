@@ -20,11 +20,11 @@ struct CardDetailView: View {
                 .modifier(CardToolbar(currentModal: $currentModal))
                 .modifier(CardModals(card: $card, currentModal: $currentModal))
 
+                // 일단 기지정된 카드 사이즈 리율에 맞춰 세로/가로 기기 방향에 맞춰 표시
                 .frame(width: calculateSize(proxy.size).width,
                        height: calculateSize(proxy.size).height)
                 .clipped()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-
                 
                 .onDrop(of: [.image], delegate: CardDrop(card: $card))
                 .onDisappear(perform: {

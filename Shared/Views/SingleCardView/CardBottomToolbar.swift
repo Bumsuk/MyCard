@@ -59,7 +59,9 @@ struct CardBottomToolbar_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             CardBottomToolbar(cardModal: .constant(.stickerPicker))
+                .preferredColorScheme(.dark)
         }
+        .environmentObject(ViewState())
         .previewLayout(.sizeThatFits)
         //.padding()
     }
