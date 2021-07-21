@@ -40,6 +40,7 @@ struct CardsView: View {
 
             if !viewState.showAllCards {
                 SingleCardView()
+                    .transition(.move(edge: .bottom))
             }
         }
         // .background(Color("background").edgesIgnoringSafeArea(.all))
