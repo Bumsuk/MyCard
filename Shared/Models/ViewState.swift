@@ -7,6 +7,10 @@
 
 import Foundation
 
+enum CardListState {
+    case list, carousel
+}
+
 class ViewState: ObservableObject {
     @Published var showAllCards = true {
         didSet {
@@ -16,6 +20,8 @@ class ViewState: ObservableObject {
         }
     }
     @Published var selectedElement: CardElement?
+    @Published var cardListState: CardListState = .list
+    var shouldScreenshot = false
     
     var selectedCard: Card? {
         didSet {
@@ -31,4 +37,6 @@ class ViewState: ObservableObject {
         selectedCard = card
         selectedElement = nil
     }
+    
+    
 }

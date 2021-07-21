@@ -1,4 +1,4 @@
-///// Copyright (c) 2021 Razeware LLC
+///// Copyright (c) 2020 Razeware LLC
 ///
 /// Permission is hereby granted, free of charge, to any person obtaining a copy
 /// of this software and associated documentation files (the "Software"), to deal
@@ -32,12 +32,24 @@
 
 import SwiftUI
 
-// 폰트크기가 자동조정되는 녀석 > 미리 아주 크게 폰트 설정하고 scale해서 사용!
-extension Text {
-  func scalableText(font: Font = Font.system(size: 1000)) -> some View {
-    self
-      .font(font)
-      .minimumScaleFactor(0.01)
-      .lineLimit(1)
-  }
+enum AppFonts {
+  static let fonts = [
+    "San Fransisco",
+    "AmericanTypewriter",
+    "Avenir-Heavy",
+    "Avenir-Book",
+    "Baskerville-Italic",
+    "ChalkboardSE-Regular",
+    "Chalkduster",
+    "Cochin-BoldItalic",
+    "Copperplate",
+    "GillSans-UltraBold",
+    "MarkerFelt-Wide",
+    "Noteworthy-Bold",
+    "Verdana-Bold",
+    "Papyrus",
+    "PartyLetPlain",
+    "SavoyeLetPlain",
+    "SnellRoundhand-Black"
+  ]
 }

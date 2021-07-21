@@ -32,12 +32,16 @@
 
 import SwiftUI
 
-// 폰트크기가 자동조정되는 녀석 > 미리 아주 크게 폰트 설정하고 scale해서 사용!
-extension Text {
-  func scalableText(font: Font = Font.system(size: 1000)) -> some View {
-    self
-      .font(font)
-      .minimumScaleFactor(0.01)
-      .lineLimit(1)
+struct ShareSheetView: UIViewControllerRepresentable {
+  let activityItems: [UIImage]
+  let applicationActivities: [UIActivity]?
+
+  func makeUIViewController(context: Context) -> some UIViewController {
+    UIActivityViewController(
+      activityItems: activityItems,
+      applicationActivities: applicationActivities)
+  }
+
+  func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
   }
 }

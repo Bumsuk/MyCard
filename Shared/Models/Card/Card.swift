@@ -12,6 +12,9 @@ struct Card: Identifiable {
     var id = UUID()
     var backgroundColor: Color = .yellow
     var elements: [CardElement] = []
+
+    var image: UIImage?
+    var shareImage: UIImage?
     
     mutating func addElement(uiImage: UIImage) {
         let imageFilename = uiImage.save() // ! 여기서 파일로 저장 !
