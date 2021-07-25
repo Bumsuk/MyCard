@@ -12,7 +12,7 @@ struct SingleCardView: View {
     @EnvironmentObject var viewState: ViewState
     @EnvironmentObject var store: CardStore
 
-    var noData: some View {
+    var noData: some View { // 안씀
         Text("암것도 없으요!").foregroundColor(.gray)
     }
     
@@ -27,11 +27,7 @@ struct SingleCardView: View {
                 .navigationViewStyle(StackNavigationViewStyle())
                 .onAppear(perform: {
                 })
-            } else {
-                noData
             }
-        } else {
-            noData
         }
     }
 }

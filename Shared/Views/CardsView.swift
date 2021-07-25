@@ -17,7 +17,9 @@ struct CardsView: View {
     var createButton: some View {
         Button(action: {
             viewState.selectedCard = store.addCard()
-            viewState.showAllCards = false
+            withAnimation {
+                viewState.showAllCards = false
+            }
         }, label: {
             Label("Create New", systemImage: "plus")
                 .frame(maxWidth: .infinity)

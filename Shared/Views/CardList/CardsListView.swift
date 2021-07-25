@@ -30,7 +30,9 @@ struct CardsListView: View {
                             })
                             .onTapGesture {
                                 viewState.selectedCard = card
-                                viewState.showAllCards.toggle()
+                                withAnimation {
+                                    viewState.showAllCards = false
+                                }
                             }
                     }
                 }

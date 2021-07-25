@@ -3,4 +3,70 @@
    uuid = "F7794796-DA69-4FBF-9C37-BEE21A88A45B"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4B3ED4EA-CFA7-4596-AA55-5A3F43A30A53"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shared/Views/SingleCardView/SingleCardView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "noData"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7C6F2612-DC30-4F7B-9DFD-C0BFE708D21C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shared/Views/SingleCardView/SingleCardView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "7C6F2612-DC30-4F7B-9DFD-C0BFE708D21C - 57fa4f5d54cba527"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyCards.SingleCardView.body.getter : some"
+                  moduleName = "MyCards"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brown/Desktop/MyCard/Shared/Views/SingleCardView/SingleCardView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "1496">
+               </Location>
+               <Location
+                  uuid = "7C6F2612-DC30-4F7B-9DFD-C0BFE708D21C - 57fa4f5d54cba527"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyCards.SingleCardView.body.getter : some"
+                  moduleName = "MyCards"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brown/Desktop/MyCard/Shared/Views/SingleCardView/SingleCardView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "3452">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
