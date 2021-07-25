@@ -17,7 +17,7 @@ struct AppLoadingView: View {
                 .transition(.asymmetric(insertion: .slide, removal: .move(edge: .leading)))
                 .onAppear(perform: {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                        withAnimation {
+                        withAnimation(.linear.speed(1.0)) {
                             showSplash = false
                         }
                     }
@@ -27,7 +27,11 @@ struct AppLoadingView: View {
                 //.transition(.move(edge: .trailing))
                 //.transition(.slide.combined(with: .scale))
             
+                // .transition(.move(edge: .top))
+                
                 .transition(.scale(scale: 0, anchor: .top))
+            
+            
                 //.transition(.offset(x: 400, y: 400))
             
             

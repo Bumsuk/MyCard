@@ -52,6 +52,8 @@ struct SplashScreen_Previews: PreviewProvider {
     }
 }
 
+
+
 // 애니메이션 수정자
 private struct SplashAnimation: ViewModifier {
     @State private var animating = true

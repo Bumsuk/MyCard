@@ -8,15 +8,35 @@
 import SwiftUI
 
 struct ToolbarButtonView: View {
+    @Environment(\.verticalSizeClass) var verticalSizeClass // ! 중요
     let modal: CardModal
+    
     var body: some View {
-        VStack(spacing: 5) {
-            Image(systemName: modal.buttonData.imageName)
-                //.font(.title)
-                .frame(width: 20, height: 20, alignment: .center)
-            Text(modal.buttonData.text).font(.caption)
+        let text = modal.buttonData.text
+        let imageName = modal.buttonData.imageName
+        
+        if verticalSizeClass == .compact {
+            compactView(imageName)
+        } else {
+            regularView(imageName, text)
         }
-        //.padding(.top)
+    }
+    
+    func regularView(_ imageName: String, _ text: String) -> some View {
+        VStack(spacing: 2) {
+            Image(systemName: imageName)
+            Text(text)
+        }
+        .frame(minWidth: 60)
+        .padding(.top, 5)
+    }
+    
+    func compactView(_ imageName: String) -> some View {
+        VStack(spacing: 2) {
+            Image(systemName: imageName)
+        }
+        .frame(minWidth: 60)
+        .padding(.top, 5)
     }
 }
 
@@ -35,7 +55,7 @@ struct CardBottomToolbar: View {
                     ToolbarButtonView(modal: type)
                 })
                 .disabled(checkDisable(type: type))
-                Spacer()
+                //Spacer()
             }
             
             CircleAnimView().frame(width: 60, height: 60, alignment: .center)
@@ -61,6 +81,8 @@ struct CardBottomToolbar_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             CardBottomToolbar(cardModal: .constant(.stickerPicker))
+                .previewLayout(.device)
+                .previewDevice("iPhone 12 Pro Max")
                 .preferredColorScheme(.dark)
         }
         .environmentObject(ViewState())
