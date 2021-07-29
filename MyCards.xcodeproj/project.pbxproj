@@ -17,6 +17,8 @@
 		C00D82C9269C31E900455483 /* Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00D82C7269C31E900455483 /* Transform.swift */; };
 		C00D82CC269C3D8F00455483 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00D82CB269C3D8F00455483 /* Operators.swift */; };
 		C00D82CD269C3D8F00455483 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00D82CB269C3D8F00455483 /* Operators.swift */; };
+		C01113CB26B25A6E00200702 /* ListSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01113CA26B25A6E00200702 /* ListSelectionView.swift */; };
+		C01113CC26B25A6E00200702 /* ListSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01113CA26B25A6E00200702 /* ListSelectionView.swift */; };
 		C049956E269C14D0001CD798 /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C049956D269C14D0001CD798 /* CardDetailView.swift */; };
 		C049956F269C14D0001CD798 /* CardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C049956D269C14D0001CD798 /* CardDetailView.swift */; };
 		C062B3FD26A07EF3000FE4C4 /* PencilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C062B3FC26A07EF3000FE4C4 /* PencilView.swift */; };
@@ -108,6 +110,7 @@
 		C00D82C4269C30B000455483 /* ResizableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableView.swift; sourceTree = "<group>"; };
 		C00D82C7269C31E900455483 /* Transform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transform.swift; sourceTree = "<group>"; };
 		C00D82CB269C3D8F00455483 /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		C01113CA26B25A6E00200702 /* ListSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSelectionView.swift; sourceTree = "<group>"; };
 		C049956D269C14D0001CD798 /* CardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailView.swift; sourceTree = "<group>"; };
 		C062B3FC26A07EF3000FE4C4 /* PencilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilView.swift; sourceTree = "<group>"; };
 		C066F51826AD35DB004F00E1 /* TextPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextPicker.swift; sourceTree = "<group>"; };
@@ -323,6 +326,7 @@
 			children = (
 				C0932696269C07A300D689CC /* NotUse */,
 				C0932691269C045200D689CC /* CardsView.swift */,
+				C01113CA26B25A6E00200702 /* ListSelectionView.swift */,
 				C0AA879A26A1AAED002E8D25 /* CardList */,
 				C00D82C2269C2DBC00455483 /* SingleCardView */,
 				C00D82C3269C309F00455483 /* ResizableView */,
@@ -511,6 +515,7 @@
 				C066F51926AD35DB004F00E1 /* TextPicker.swift in Sources */,
 				C0932692269C045200D689CC /* CardsView.swift in Sources */,
 				C0B56496269D305E007237E4 /* PreviewData.swift in Sources */,
+				C01113CB26B25A6E00200702 /* ListSelectionView.swift in Sources */,
 				C0B564D2269D35FE007237E4 /* CardElement.swift in Sources */,
 				C0B564D9269D3737007237E4 /* CardStore.swift in Sources */,
 				C091F6A526A7C69C00FC31B9 /* AppLoadingView.swift in Sources */,
@@ -562,6 +567,7 @@
 				C0B564DA269D3737007237E4 /* CardStore.swift in Sources */,
 				C0932693269C045200D689CC /* CardsView.swift in Sources */,
 				C0B564D7269D3642007237E4 /* Card.swift in Sources */,
+				C01113CC26B25A6E00200702 /* ListSelectionView.swift in Sources */,
 				C00D82C6269C30B000455483 /* ResizableView.swift in Sources */,
 				C090CD37269E8F3000EA9577 /* MessageTableViewCell.swift in Sources */,
 				C0BBB3BF26A1107A007C7A34 /* Shapes.swift in Sources */,

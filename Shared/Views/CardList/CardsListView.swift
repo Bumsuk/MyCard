@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import Combine
+
 
 // 카드 리스트뷰
 struct CardsListView: View {
     @EnvironmentObject var viewState: ViewState
     @EnvironmentObject var store: CardStore
+    @State var cancellable: Set<AnyCancellable> = .init()
 
     func columns(size: CGSize) -> [GridItem] {
          [GridItem(.adaptive(minimum: Settings.thumbnailSize(size: size).width))]
@@ -39,6 +42,11 @@ struct CardsListView: View {
                 .padding(.all, 10)
             }
         }
+        .onAppear(perform: {
+            viewState.$cardListState.sink { cardState in
+                print("[CardsListView] cardState : \(cardState)")
+            }.store(in: &cancellable)
+        })
     }
 }
 

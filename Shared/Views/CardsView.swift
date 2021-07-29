@@ -11,9 +11,37 @@ import SwiftUI
 struct CardsView: View {
     @EnvironmentObject var viewState: ViewState
     @EnvironmentObject var store: CardStore
-
     @State var count: Int = 0
 
+    var body: some View {
+        VStack {
+            ListSelectionView(selection: $viewState.cardListState)
+
+            ZStack {
+                switch viewState.cardListState {
+                case .list:
+                    CardsListView()
+                case .carousel:
+                    Carousel()
+                }
+                
+                VStack {
+                    Spacer()
+                    createButton
+                }
+                
+                if !viewState.showAllCards {
+                    SingleCardView()
+                        .zIndex(1)
+                        .transition(.move(edge: .bottom))
+                }
+            }
+            // .background(Color("background").edgesIgnoringSafeArea(.all))
+            //.background(Color.gray.opacity(0.3).edgesIgnoringSafeArea(.all))
+            .onAppear(perform: {})
+        }
+    }
+    
     var createButton: some View {
         Button(action: {
             viewState.selectedCard = store.addCard()
@@ -30,31 +58,13 @@ struct CardsView: View {
         .background(Color("barColor"))
         .accentColor(.white)
     }
-
-    var body: some View {
-        ZStack {
-            CardsListView()
-
-            VStack {
-                Spacer()
-                createButton
-            }
-
-            if !viewState.showAllCards {
-                SingleCardView()
-                    .transition(.move(edge: .bottom))
-            }
-        }
-        // .background(Color("background").edgesIgnoringSafeArea(.all))
-        //.background(Color.gray.opacity(0.3).edgesIgnoringSafeArea(.all))
-        .onAppear(perform: {})
-    }
 }
 
 struct CardsView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             CardsView()
+                .previewLayout(.sizeThatFits)
                 .environmentObject(ViewState())
                 .environmentObject(CardStore(defaultData: true))
                 //.preferredColorScheme(.light)
