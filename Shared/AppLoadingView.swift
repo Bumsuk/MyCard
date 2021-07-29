@@ -26,15 +26,11 @@ struct AppLoadingView: View {
             CardsView()
                 //.transition(.move(edge: .trailing))
                 //.transition(.slide.combined(with: .scale))
-            
                 // .transition(.move(edge: .top))
                 
                 .transition(.scale(scale: 0, anchor: .top))
-            
-            
+                        
                 //.transition(.offset(x: 400, y: 400))
-            
-            
                 // .transition(.move(edge: .bottom))
                 //.transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .bottom)))
                 //.transition(.asymmetric(insertion: .slide, removal: .scale))

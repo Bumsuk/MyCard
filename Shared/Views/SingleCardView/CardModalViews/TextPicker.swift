@@ -40,8 +40,13 @@ struct TextPicker: View {
     let onCommit = {
       presentationMode.wrappedValue.dismiss()
     }
-    TextField(
-      "Enter text", text: $textElement.text, onCommit: onCommit)
+    
+    VStack {
+        TextField("Enter text", text: $textElement.text, onCommit: onCommit)
+            .font(.custom(textElement.textFont, fixedSize: 30))
+            .foregroundColor(textElement.textColor)
+        TextView(font: $textElement.textFont, color: $textElement.textColor)
+    }
   }
 }
 

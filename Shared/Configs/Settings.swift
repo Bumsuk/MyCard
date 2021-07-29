@@ -14,7 +14,7 @@ enum Settings {
         let threshold: CGFloat = 500
         var scale: CGFloat = 0.12
         if size.width > threshold && size.height > threshold {
-            scale = 0.2
+            scale = 0.3
         }
         
         return .init(width: Settings.cardSize.width * scale,
