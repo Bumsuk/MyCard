@@ -39,53 +39,54 @@ import SwiftUI
 // and saves it to documents with the same filename as the card id.
 
 struct RenderableView<Content>: View where Content: View {
-  @EnvironmentObject var viewState: ViewState
+    @EnvironmentObject var viewState: ViewState
 
-  let content: () -> Content
-  @Binding var card: Card
+    let content: () -> Content
+    @Binding var card: Card
 
-  init(card: Binding<Card>, @ViewBuilder content: @escaping () -> Content) {
-    self.content = content
-    self._card = card
-  }
+    init(card: Binding<Card>, @ViewBuilder content: @escaping () -> Content) {
+        self.content = content
+        self._card = card
+    }
 
-  var body: some View {
-    content()
-      // Share
-      .onChange(of: viewState.shouldScreenshot) { _ in
-        if viewState.shouldScreenshot {
-          viewState.shouldScreenshot = false
-          card.shareImage = content().screenShot(size: Settings.cardSize)
-        }
-      }
-      // Thumbnail
-      .onDisappear {
-        DispatchQueue.main.async {
-          if let image = content().screenShot(size: Settings.thumbnailSize(size: Settings.cardSize)) {
-            _ = image.save(to: card.id.uuidString)
-            card.image = image
-          }
-        }
-      }
-  }
+    var body: some View {
+        content()
+            // Share
+            .onChange(of: viewState.shouldScreenshot) { _ in
+                if viewState.shouldScreenshot {
+                    viewState.shouldScreenshot = false
+                    card.shareImage = content().screenShot(size: Settings.cardSize)
+                }
+            }
+            // Thumbnail
+            .onDisappear {
+                DispatchQueue.main.async {
+                    if let image = content().screenShot(size: Settings.thumbnailSize(size: Settings.cardSize)) {
+                        _ = image.save(to: card.id.uuidString)
+                        card.image = image
+                    }
+                }
+            }
+    }
 }
 
 private extension View {
-  func screenShot(size: CGSize) -> UIImage? {
-    let controller = UIHostingController(rootView: self)
-    guard let renderView = controller.view,
-      let window = UIApplication.shared.windows.first else { return nil }
-    renderView.frame = CGRect(x: 0, y: CGFloat(Int.max), width: 1, height: 1)
-    window.rootViewController?.view.addSubview(renderView)
+    // 현시점에서 SwiftUI에서 화면 캡쳐는 불가능하므로, UIHostingController로 캡쳐를 진행함.
+    func screenShot(size: CGSize) -> UIImage? {
+        let controller = UIHostingController(rootView: self)
+        guard let renderView = controller.view,
+              let window = UIApplication.shared.windows.first else { return nil }
+        renderView.frame = CGRect(x: 0, y: CGFloat(Int.max), width: 1, height: 1)
+        window.rootViewController?.view.addSubview(renderView)
 
-    let viewSize = controller.sizeThatFits(in: size)
-    renderView.bounds = CGRect(origin: .zero, size: viewSize)
-    renderView.sizeToFit()
+        let viewSize = controller.sizeThatFits(in: size)
+        renderView.bounds = CGRect(origin: .zero, size: viewSize)
+        renderView.sizeToFit()
 
-    let image = UIGraphicsImageRenderer(bounds: renderView.bounds).image { _ in
-      renderView.drawHierarchy(in: renderView.bounds, afterScreenUpdates: true)
+        let image = UIGraphicsImageRenderer(bounds: renderView.bounds).image { _ in
+            renderView.drawHierarchy(in: renderView.bounds, afterScreenUpdates: true)
+        }
+        renderView.removeFromSuperview()
+        return image.resize(to: size)
     }
-    renderView.removeFromSuperview()
-    return image.resize(to: size)
-  }
 }

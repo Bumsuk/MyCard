@@ -101,7 +101,7 @@
 		C0F39C3E26A508F200F7862D /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F39C3C26A508F200F7862D /* UIImageExtensions.swift */; };
 		C0F39C3F26A508F200F7862D /* FileManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F39C3D26A508F200F7862D /* FileManagerExtensions.swift */; };
 		C0F39C4126A50C2400F7862D /* AngleExtensions.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F39C4026A50C2400F7862D /* AngleExtensions.swift.swift */; };
-		C0F39C6026A561A800F7862D /* CardModals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F39C5F26A561A800F7862D /* CardModals.swift */; };
+		C0F39C6026A561A800F7862D /* CardModalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F39C5F26A561A800F7862D /* CardModalsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -160,7 +160,7 @@
 		C0F39C3C26A508F200F7862D /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		C0F39C3D26A508F200F7862D /* FileManagerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManagerExtensions.swift; sourceTree = "<group>"; };
 		C0F39C4026A50C2400F7862D /* AngleExtensions.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleExtensions.swift.swift; sourceTree = "<group>"; };
-		C0F39C5F26A561A800F7862D /* CardModals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModals.swift; sourceTree = "<group>"; };
+		C0F39C5F26A561A800F7862D /* CardModalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModalsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,11 +195,9 @@
 				C090CD0A269E6E8400EA9577 /* CardModalViews */,
 				C09325F8269BEC6400D689CC /* SingleCardView.swift */,
 				C049956D269C14D0001CD798 /* CardDetailView.swift */,
-				C0F39C5F26A561A800F7862D /* CardModals.swift */,
+				C0F39C5F26A561A800F7862D /* CardModalsView.swift */,
 				C0B56514269D59C5007237E4 /* CardElementView.swift */,
 				C00D82BA269C1BE800455483 /* CardBottomToolbar.swift */,
-				C0B5648E269D2D30007237E4 /* CardToolbar.swift */,
-				C08BA7C026A0796200C5B9CE /* CardDrop.swift */,
 			);
 			path = SingleCardView;
 			sourceTree = "<group>";
@@ -226,6 +224,8 @@
 			isa = PBXGroup;
 			children = (
 				C090CD3B269E91AB00EA9577 /* SpotCellText */,
+				C0B5648E269D2D30007237E4 /* CardToolbar.swift */,
+				C08BA7C026A0796200C5B9CE /* CardDrop.swift */,
 				C090CD11269E6ED000EA9577 /* StickerPicker.swift */,
 				C090CD2F269E8D5400EA9577 /* PhotoPicker.swift */,
 				C0BBB3C026A116A4007C7A34 /* FramePicker.swift */,
@@ -549,7 +549,7 @@
 				C0B564D6269D3642007237E4 /* Card.swift in Sources */,
 				C091F66826A7B4BC00FC31B9 /* ShareSheetView.swift in Sources */,
 				C0BBB3C426A15BE3007C7A34 /* AnyShape.swift in Sources */,
-				C0F39C6026A561A800F7862D /* CardModals.swift in Sources */,
+				C0F39C6026A561A800F7862D /* CardModalsView.swift in Sources */,
 				C090CD12269E6ED000EA9577 /* StickerPicker.swift in Sources */,
 				C091F66626A7B4BC00FC31B9 /* RenderableView.swift in Sources */,
 				C0F39C3E26A508F200F7862D /* UIImageExtensions.swift in Sources */,

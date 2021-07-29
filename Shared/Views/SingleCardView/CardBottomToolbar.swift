@@ -49,13 +49,15 @@ struct CardBottomToolbar: View {
     var body: some View {
         HStack(alignment: .center, spacing: 10) {
             ForEach(CardModal.allCases, id: \.self) { type in
-                Button(action: {
-                    cardModal = type
-                }, label: {
-                    ToolbarButtonView(modal: type)
-                })
-                .disabled(checkDisable(type: type))
-                //Spacer()
+                if type != .shareSheet {
+                    Button(action: {
+                        cardModal = type
+                    }, label: {
+                        ToolbarButtonView(modal: type)
+                    })
+                    .disabled(checkDisable(type: type))
+                    //Spacer()
+                }
             }
             
             CircleAnimView().frame(width: 60, height: 60, alignment: .center)

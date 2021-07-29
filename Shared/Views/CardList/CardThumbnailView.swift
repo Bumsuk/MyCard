@@ -14,14 +14,6 @@ struct CardThumbnailView: View {
     
     var body: some View {
         ZStack {
-            /*
-            RoundedRectangle(cornerRadius: 15)
-                .foregroundColor(card.backgroundColor)
-                .frame(width: Settings.thumbnailSize(size: size).width,
-                       height: Settings.thumbnailSize(size: size).height,
-                       alignment: .center)
-            */
-            
             card
                 .backgroundColor
                 .cornerRadius(10)

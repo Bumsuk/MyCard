@@ -15,7 +15,9 @@ struct CardsView: View {
 
     var body: some View {
         VStack {
-            ListSelectionView(selection: $viewState.cardListState)
+            if viewState.showAllCards {
+                ListSelectionView(selection: $viewState.cardListState)
+            }
 
             ZStack {
                 switch viewState.cardListState {

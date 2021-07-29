@@ -9,18 +9,21 @@ import Foundation
 
 enum CardModal: Identifiable, CaseIterable {
     var id: Int { hashValue }
-    
+
     case photoPicker
     case framePicker
     case stickerPicker
     case textPicker
-    
+
+    case shareSheet // ! 공유
+
     var buttonData: (text: String, imageName: String) {
         switch self {
-        case .photoPicker:       return ("Photos", "photo")
-        case .framePicker:       return ("Frames", "square.on.circle")
-        case .stickerPicker:     return ("Stickers", "heart.circle")
-        case .textPicker:        return ("Text", "textformat")
+        case .photoPicker: return ("Photos", "photo")
+        case .framePicker: return ("Frames", "square.on.circle")
+        case .stickerPicker: return ("Stickers", "heart.circle")
+        case .textPicker: return ("Text", "textformat")
+        case .shareSheet: return ("", "")
         }
     }
 }

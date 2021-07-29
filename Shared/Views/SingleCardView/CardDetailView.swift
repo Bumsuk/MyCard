@@ -15,37 +15,38 @@ struct CardDetailView: View {
     @Binding var card: Card
         
     var body: some View {
-        GeometryReader { proxy in
-            content(size: proxy.size)
-                .modifier(CardToolbar(currentModal: $currentModal))
-                .modifier(CardModals(card: $card, currentModal: $currentModal))
-
-                // 일단 기지정된 카드 사이즈 리율에 맞춰 세로/가로 기기 방향에 맞춰 표시
-                .frame(width: calculateSize(proxy.size).width,
-                       height: calculateSize(proxy.size).height)
-                .clipped()
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                
-                .onDrop(of: [.image], delegate: CardDrop(card: $card,
-                                                         size: proxy.size,
-                                                         frame: proxy.frame(in: .global)))
-                .onAppear(perform: {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                        print("[size] \(proxy.size)")
-                        print("[frame - .local] \(proxy.frame(in: .local))")
-                        print("[frame - .global] \(proxy.frame(in: .global))")
-                    }
-                })
-                .onDisappear(perform: {
-                    card.save()
-                })
-                .onChange(of: scenePhase, perform: { newPhase in
-                    print(#function, "[onChange] newPhase : \(newPhase)")
-                    if newPhase == .inactive {
+        RenderableView(card: $card, content: {
+            GeometryReader { proxy in
+                content(size: proxy.size)
+                    // 일단 기지정된 카드 사이즈 리율에 맞춰 세로/가로 기기 방향에 맞춰 표시
+                    .frame(width: calculateSize(proxy.size).width,
+                           height: calculateSize(proxy.size).height)
+                    .clipped()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    
+                    .onDrop(of: [.image], delegate: CardDrop(card: $card,
+                                                             size: proxy.size,
+                                                             frame: proxy.frame(in: .global)))
+                    .onAppear(perform: {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                            print("[size] \(proxy.size)")
+                            print("[frame - .local] \(proxy.frame(in: .local))")
+                            print("[frame - .global] \(proxy.frame(in: .global))")
+                        }
+                    })
+                    .onDisappear(perform: {
                         card.save()
-                    }
-                })
-        }
+                    })
+                    .onChange(of: scenePhase, perform: { newPhase in
+                        print(#function, "[onChange] newPhase : \(newPhase)")
+                        if newPhase == .inactive {
+                            card.save()
+                        }
+                    })
+            }
+        })
+        .modifier(CardToolbar(currentModal: $currentModal))
+        .modifier(CardModals(card: $card, currentModal: $currentModal))
     }
     
     func content(size: CGSize) -> some View {
