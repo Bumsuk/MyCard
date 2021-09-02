@@ -47,10 +47,8 @@ extension CardStore {
         var cards: [Card] = []
 
         guard let path = FileManager.documentURL?.path,
-              let enumerator =
-                FileManager.default.enumerator(atPath: path),
-              let files = enumerator.allObjects as? [String]
-        else { return cards }
+              let enumerator = FileManager.default.enumerator(atPath: path),
+              let files = enumerator.allObjects as? [String] else { return cards }
 
         let cardFiles = files.filter { $0.contains(".rwcard") }
         for cardFile in cardFiles {
